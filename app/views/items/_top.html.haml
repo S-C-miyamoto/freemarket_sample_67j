@@ -2,29 +2,32 @@
   .header_box
     .header_box_upper
       .header_box_upper_icon
-        %a.header_link{:href => "#"}
-          %img.header_box_upper_icon_img{:src => "#"}/
+        = link_to '#', class: 'header_link' do
+          %img{:src => "#"}
       .header_box_upper_search
         %form.search_form{:accept => "UTF-8", :action => "#", :method => "get"}
           %input{:name => "utf8", :type => "hidden", :value => "#"}/
-          %input#keyqword.search_input{:name => "keyword", :placeholder => "何かお探しですか？", :type => "text"}/
-          %i.fas.fa-search.header_box_upper_search_icon
+          %input#keyword.search_input{:name => "keyword", :placeholder => "何かお探しですか？", :type => "text"}/
+          = link_to '#', class: 'fas.fa-search.header_box_upper_search_icon' do
+            %img.icon{:src => "#", :type => "submit"}
     .header_box_lower
       %ul.header_box_lower_select.categories_box
         %li.header_box_lower_select_lists
-          %a.header_link.categorides-list_link{:href => "#"}
+          = link_to '#', class: "header_link.categorides-list_link" do
             %i.fas.fa-list.header_box_lower_select_lists_icon
-            カテゴリから探す
+              カテゴリ
             %ul.categories-list_parents
               %ul
         %li.header_box_lower_select_lists.brand_box
-          %a.header_link.brand_box{:href => "#"}
+          = link_to '#', class: "header_link.brand_box" do
             %i.fas.fa-tags.header_box_lower_select_lists_icon
-            ブランドから探す
+              ブランド
       %ul.header_lower_users
         %li.header_box_lower_users_lists
-          %a.header_link{:href => "#"}
-            .header_box_lower_userslists_title 新規会員登録
-        %li.header_box_lower_users_lists
-          %a.header_link{:href => "#"}
-            .header_box_lower_users_lists_title ログイン
+          = link_to '#', class: "header_link_2" do
+            .header_box_lower_userslists_title 
+              新規会員登録
+        %li.header_box_lower_users_lists_2
+          = link_to '#', class: "header_link_3" do
+            .header_box_lower_users_lists_title 
+              ログイン

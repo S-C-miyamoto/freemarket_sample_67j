@@ -1,3 +1,83 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.header{
+  padding: 0 60px;
+  &_box{
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    &_upper{
+      height: 40px;
+      width: 100%;
+      display: flex;
+      &_icon{
+        background-color: red;
+        .header_link{
+          width: 140px;
+          display: block;
+          img{
+            width: 100%;
+            vertical-align: bottom;
+          }
+        }
+      }
+      &_search{
+        .search_form{
+          input{}
+          .search_input{
+            width: 608px;
+            height: 35px;
+            margin-left: 23px;
+          }
+          .fas.fa-search.header_box_upper_search_icon{
+            width: 36px;
+            border: 0;
+            cursor: pointer;
+            background-color: #3CCACE;
+            padding: 8px;
+            .icon{
+              width: 100%;
+              vertical-align: bottom;
+            }
+          }
+        }
+      }
+    }
+    &_lower{
+      display: flex;
+      justify-content: space-between;
+      .header_box_lower_select.categories_box{
+        .header_box_lower_select_lists{
+          .header_link.categorides-list_link{
+            .fas.fa-list.header_box_lower_select_lists_icon{
+            }
+          }
+        }
+        .header_box_lower_select_lists.brand_box{
+          .header_link.brand_box{
+            .fas.fa-tags.header_box_lower_select_lists_icon{
+            }
+          }
+        }
+      }
+      .header_lower_users{
+        margin-right: 239px;
+        float: right;
+        .header_box_lower_users_lists{
+          .header_link_2{
+            .header_box_lower_userslists_title{
+            }
+          }
+        }
+        .header_box_lower_users_lists_2{
+          .header_link_3{
+            .header_box_lower_users_lists_title{
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.image{}
+  

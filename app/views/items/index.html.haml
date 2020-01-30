@@ -9,9 +9,9 @@
     %li{:role => "image_presentation"}
 .popular
   .popular_content
-    %a.popular_content_title{:href => "#"}
-      %img.popular_content_title_icon{:scr => "#"}/
-      ポプピュラーワード
+    = link_to '#', class: "popular_content_title" do
+      .img.popular_content_title_icon
+        ポプラーワード
 .fooder
   .fooder_big
     .fooder_big_content
