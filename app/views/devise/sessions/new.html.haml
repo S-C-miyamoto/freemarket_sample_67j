@@ -1,4 +1,3 @@
--# %script{:src => "https://actyway.com/demo/sakura.8222.7.js?1580111844603", :type => "text/javascript"}
 
 .login_header
   %img.login_header_image{:height => "100", :src => "/images/material/logo/J_Team_Logo.png", :width => "200"}/
@@ -46,24 +45,6 @@
               
     .login_contents_main_login-btn
       %input.login_contents_main_login-btn{"data-disable-with" => "ログイン", :name => "commit", :type => "submit", :value => "ログイン"}/
-
--# %h2 Log in
--# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .field
--#     = f.label :password
--#     %br/
--#     = f.password_field :password, autocomplete: "current-password"
--#   - if devise_mapping.rememberable?
--#     .field
--#       = f.check_box :remember_me
--#       = f.label :remember_me
--#   .actions
--#     = f.submit "Log in"
--# = render "devise/shared/links"
 
 .login_footer
   .login_footer_contents
