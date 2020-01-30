@@ -4,10 +4,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_for(:facebook)
   end
 
-  def twitter
-    callback_for(:twitter)
-  end
-
   def google
     callback_for(:google)
   end

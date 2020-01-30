@@ -12,6 +12,7 @@ class User < ApplicationRecord
             user.password = Devise.friendly_token[0,20]
           end
         end
+
   validates :email,             presence: {message: "メールを入力してください"}, uniqueness: { case_sensitive: false }
   validates :name,              presence: true, length: { maximum: 20 }
   validates :password,          presence: true, length: {minimum: 7}
