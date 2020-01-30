@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+.login_header{
+  height: 100px;
+  background-color: #dfdfdf;
+  &_logo{
+    text-align: center;
+  }
+}
+
+.login_contents{
+  background-color: #f5f5f5;
+  width: 100%;
+  &_top{
+    margin: 0 auto;
+    font-size: 15px;
+    padding: 40px;
+    width: 600px;
+    background-color: white;
+    text-shadow: none;
+    text-align: center;
+    border-bottom-style: solid;
+    border-color: #f5f5f5;
+    &_mail-btn{
+      text-align: center;
+      margin: 0 auto;
+      background-color: #0099e8;
+      text-decoration: none;
+      height: 50px;
+      width: 340px;
+      border-radius: 10px;
+      line-height: 50px;
+      .new_register_mail{
+        color:black;
+      }
+    }
+  }
+  &_main{
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    width: 600px;
+    height: auto;
+    &_facebook_btn{
+      text-align: center;
+      margin: 0 auto;
+      background-color: #3b5998;
+      text-decoration: none;
+      height: 50px;
+      width: 343px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      line-height: 50px;
+      .new_register_facebook{
+        color: black;
+      }
+    }
+    &_google_btn{
+      text-align: center;
+      margin: 0 auto;
+      color: #333333;
+      background-color: #ffffff;
+      text-decoration: none;
+      height: 50px;
+      width: 343px;
+      border: solid 1px #333333;
+      border-radius: 10px;
+      line-height: 50px;
+      margin-bottom: 50px;
+      .new_register_google{
+        color: black;
+      }
+    }
+    &_mailaddress{
+      text-align: center;
+      &_btn{
+        margin: 0 auto;
+        color: grey;
+        text-decoration: none;
+        height: 50px;
+        width: 340px;
+        border: 1px solid #ccc;
+        line-height: 50px;
+        margin-bottom: 50px;
+        border-radius: 4px;
+        padding-left: 15px;
+      }
+    }
+    &_password{
+      text-align: center;
+      &_btn{
+        width: 340px;
+        margin: 10px 0 0;
+        height: 50px;
+        padding: 10px 15px 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-size: 15px;
+        margin-bottom: 15px;
+        color: grey;
+      }
+    }
+    &_recaptcha{
+      padding: 15px 10px 15px 0px;
+      margin: 0 120px;
+    }
+    &_login-btn{
+      text-align: center;
+      color: white;
+      margin: 0 auto;
+      background-color: #ea352d;
+      text-decoration: none;
+      display: block;
+      height: 50px;
+      width: 340px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      line-height: 50px;
+    }
+  }
+}
+
+
+
+.login_footer{
+  background-color: #dfdfdf;
+  a{
+    color:#333;
+    text-decoration: none;
+  }
+  &_contents{
+    width: 450px;
+    height: 210px;
+    margin: 0 auto;
+    &_links{
+      display: flex;
+      justify-content: space-around;
+      font-size: 12px;
+      padding-top: 20px;
+    }
+    &_logo{
+      height: 75px;
+      width:90px;
+      margin: 0 auto;
+      padding-top: 50px;
+      &_image{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &_inc{
+      text-align: center;
+      font-size: 10px;
+      padding-top: 5px;
+    }
+  }
+}
