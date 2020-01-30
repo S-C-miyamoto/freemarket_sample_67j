@@ -23,8 +23,17 @@
             ブランドから探す
       %ul.header_lower_users
         %li.header_box_lower_users_lists
-          %a.header_link{:href => "#"}
+          %a.header_link{href: new_user_registration_path }
             .header_box_lower_userslists_title 新規会員登録
         %li.header_box_lower_users_lists
-          %a.header_link{:href => "#"}
+          %a.header_link{href: user_session_path }
             .header_box_lower_users_lists_title ログイン
+            = link_to 'Googleログイン', user_google_omniauth_authorize_path, class: "google"
+            = link_to 'Facebookログイン', user_facebook_omniauth_authorize_path, class: "facebook"
+        %li.header_box_lower_users_lists
+          %a.header_link{href: destroy_user_session_path, method: :delete }
+            .header_box_lower_users_lists_title ログアウト
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+
+- if current_user
+  %h1= current_user.name
