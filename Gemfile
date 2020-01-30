@@ -71,7 +71,6 @@ gem 'jquery-rails'
 gem 'payjp'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-# gem "omniauth-rails_csrf_protection"
 gem 'ancestry'
 gem 'ransack'
 gem 'recaptcha', require: "recaptcha/rails"

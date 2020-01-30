@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :trackable, :omniauthable, omniauth_providers: %i(facebook google )
 
-         def self.from_omniauth(auth)
+        def self.from_omniauth(auth)
           where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
             user.name = auth.info.name
             user.email = auth.info.email
