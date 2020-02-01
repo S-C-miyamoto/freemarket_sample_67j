@@ -92,4 +92,3 @@ gem 'aws-sdk', '~> 3'
 gem 'aws-sdk-rails'
 gem 'google-analytics-rails'
 gem 'erb2haml'
-
