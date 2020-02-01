@@ -28,3 +28,8 @@
         %li.header_box_lower_users_lists
           %a.header_link{:href => "#"}
             .header_box_lower_users_lists_title ログイン
+
+= link_to 'Googleログイン', user_google_omniauth_authorize_path
+= link_to "ログアウト", destroy_user_session_path, method: :delete
+-if current_user
+  = current_user.nickname
