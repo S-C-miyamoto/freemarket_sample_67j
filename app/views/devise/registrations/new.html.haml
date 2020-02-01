@@ -1,7 +1,53 @@
-.sign-up_header
-  %img.sign-up_header_image{:height => "100", :src => "/images/material/logo/J_Team_Logo.png", :width => "200"}/
-  .sign-up_header_logo
-    %img{:height => "100", :src => "/images/material/logo/logo.png", :width => "200"}/
+%h2 Sign up
+= form_for @user, url: addresses_path, method: :get do |f|
+  = render "devise/shared/error_messages", resource: @user
+  .field
+    = f.label :nickname
+    %br/
+    = f.text_field :nickname
+  .field
+    = f.label :age
+    %br/
+    = f.number_field :age
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :password
+    %br/
+    = f.password_field :password,autocomplete: "off"
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name
+  .field
+    = f.label :last_name_kana
+    %br/
+    = f.text_field :last_name_kana
+  .field
+    = f.label :first_name_kana
+    %br/
+    = f.text_field :first_name_kana
+  .new_inform_content_text__main__birthday__form_icon
+    %i.fas.fa-angle-down.1
+  =f.select :birth_year, ["--"], {}, {class: "select-default_year", id:"select_birth_year"}
+  .new_inform_content_text__main__birthday__form__text_year
+    年
+  .new_inform_content_text__main__birthday__form_icon
+    %i.fas.fa-angle-down.2
+  =f.select :birth_month, ["--"], {}, {class: "select-default_year", id:"select_birth_month"}
+  .new_inform_content_text__main__birthday__form__text_month
+    月
+  .new_inform_content_text__main__birthday__form_icon
+    %i.fas.fa-angle-down.3
+  =f.select :birth_day, ["--"], {}, {class: "select-default_year", id:"select_birth_day"}
+  .new_inform_content_text__main__birthday__form__text_day
+    日
 
 .sign-up_contents
   .sign-up_contents_top
