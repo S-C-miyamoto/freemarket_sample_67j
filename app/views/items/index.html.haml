@@ -1,25 +1,3 @@
 = render partial: "top"
-.image
-  %button.image_slide_left{"aria-label" => "Previous", :style => "desplay: block;", :type => "button"} Previous
-  .image_list
-    .image_list_track
-  %button.image_slide_right{"aria-label" => "next", :style => "desplay: block;", :type => "button"} next
-  %ul.image-dots{:role => "tabs", :style => "display: block;"}
-    %li{:role => "image_presentation"}
-    %li{:role => "image_presentation"}
-.popular
-  .popular_content
-    %a.popular_content_title{:href => "#"}
-      %img.popular_content_title_icon{:scr => "#"}/
-      ポプピュラーワード
-.fooder
-  .fooder_big
-    .fooder_big_content
-      .fooder_big_content_text
-        .fooder_big_content_text_title
-          .fooder_big_content_text_title_upper FURIMAについて
-          .fooder_big_content_text_title_lower スマホ簡単アプリ
-        .fooder_big_content_text_icon
-      %img.fooder_big_content_image{:scr => "#"}/
-  .fooder_small
-  .fooder_lower
+= render partial: "main"
+/= render partial: "fooder"
