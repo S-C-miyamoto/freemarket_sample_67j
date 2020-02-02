@@ -1,4 +1,4 @@
-server '54.64.34.194', user: 'ec2-user', roles: %w{app db web}
+server '52.194.145.3', user: 'ec2-user', roles: %w{app db web}
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
