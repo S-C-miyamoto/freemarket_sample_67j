@@ -43,6 +43,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -80,9 +81,6 @@ gem 'fog-aws'
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'payjp'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
 gem 'ancestry'
 gem 'ransack'
 gem 'recaptcha', require: "recaptcha/rails"
