@@ -33,80 +33,52 @@
           ●
 
 
-
-
 .address_contents
   .address_contents_top
     住所入力
   .address_contents_main
     = form_for @address, url: addresses_path, id: "new_address", class: "new_address", method: :post do |f|
-      -# %input{:name => "utf8", :type => "hidden", :value => "✓"}/
       .address_contents_main_person
         郵便番号
         .address_contents_main_person_required
           必須
-      .address_contents_main_post_number_form
+      .adress_content_text__main__post_number_form
         = f.text_field :zipcode, placeholder: "例）123-4567", id: "address_zipcode", class: "address_contents_main_post_number_form_btn", autofocus: true
-      .address_contents_main_person
+      .adress_content_text__main__person
         都道府県
-        .address_contents_main_person_required
+        .adress_content_text__main__person_required
           必須
-      .address_contents_main_prefectures_form
-        .address_contents_main_prefectures_form_icon
+      .adress_content_text__main__prefectures__form
+        .adress_content_text__main__prefectures__form_icon
+          %i.fas.fa-angle-down.1
         =f.select :prefecture, ["------"], {}, {class: "select-default_prefectures", id:"selPref"}
-
-      .address_contents_main_person
+      .adress_content_text__main__person
         市区町村
-        .address_contents_main_person_required
+        .adress_content_text__main__person_required
           必須
-      .address_contents_main_municipality
-        .address_contents_main_municipality_last_name
+      .adress_content_text__main__municipality
+        .adress_content_text__main__person_name__last_name
           = f.text_field :city, placeholder: "例）123-4567", id: "address_city", class: "address_contents_main_municipality_last_name_btn", autofocus: true
-      .address_contents_main_person
+      .adress_content_text__main__person
         番地
-        .address_contents_main_person_required
+        .adress_content_text__main__person_required
           必須
-      .address_contents_main_municipality
-        .address_contents_main_municipality_last_name
+      .adress_content_text__main__municipality
+        .adress_content_text__main__person_name__last_name
           = f.text_field :detail_address, placeholder: "例）神南1-18-2", id: "address_detail_address", class: "address_contents_main_municipality_last_name_btn", autofocus: true
-      .address_contents_main_building
+      .adress_content_text__main__building
         建物名
-        .address_contents_main_building_required
+        .adress_content_text__main__building__required
           任意
-      .address_contents_main_municipality
-        .address_contents_main_municipality_last_name
+      .adress_content_text__main__municipality
+        .adress_content_text__main__person_name__last_name
           = f.text_field :building, placeholder: "例）例）アジアビル９F", id: "address_building", class: "address_contents_main_municipality_last_name_btn", autofocus: true
-      .address_contents_main_building
-        建物名
-        .address_contents_main_building_required
+      .adress_content_text__main__building
+        電話番号
+        .adress_content_text__main__building__required
           任意
-      .address_contents_main_municipality
-        .address_contents_main_municipality_last_name
+      .adress_content_text__main__municipality
+        .adress_content_text__main__person_name__last_name
           = f.text_field :optional_phone_number, placeholder: "例）09012345678", id: "address_building", class: "address_contents_main_municipality_last_name_btn", autofocus: true
-      .address_contents_main_prefectures_btn
-        = f.submit "登録を完了する", class: "btn-default btn-red"
-
-
-
-
-
-
-
-
-.address_footer
-  .address_footer_contents
-    .address_footer_contents_links
-      %ul
-        %a.address_footer_contents_links_1{:href => ""}
-          %li プライバシーポリシー
-      %ul
-        %a.address_footer_contents_links_2{:href => "/"}
-          %li Fmarket利用規約
-      %ul
-        %a.address_footer_contents_links_3{:href => "/"}
-          %li 特定商取引に関する表記
-    .address_footer_contents_logo
-      %a.address_footer_contents_logo_link{:href => "/"}
-        %img.address_footer_contents_logo_image{:src => "/images/material/logo/logo_gray.svg"}/
-    .address_footer_contents_inc
-      ©︎Fmarket,inc.
+      .adress_content_text__main__prefectures__button
+        = f.submit "Next"
