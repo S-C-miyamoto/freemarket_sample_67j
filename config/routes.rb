@@ -12,5 +12,8 @@ Rails.application.routes.draw do
     get 'signup', to: 'users/registrations#signup'
   end
 
+  resources :items do
+  end
+
   root 'items#index'
 end
