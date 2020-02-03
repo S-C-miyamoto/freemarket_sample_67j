@@ -1,0 +1,337 @@
+.main{
+  background: #f8f8f8;
+  &_1{
+    width: 100%;
+    height: 700px;
+    background-image: url("/images/material/pict/bg-mainVisual-pict_pc.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    &_content{
+      margin-left: 85px;
+      &_top{
+        font-size: 50px;
+        color: #f8f8f8;
+        text-shadow: 1px 1px 0 #000,
+                     1px 1px 0 #000,
+                     1px 1px 0 #000,
+                     1px 1px 0 #000;
+      }
+      &_middle{
+        margin-top: 10px;
+        color: #f8f8f8;
+        text-shadow: 1px 1px 0 #000,
+                     1px 1px 0 #000,
+                     1px 1px 0 #000,
+                     1px 1px 0 #000;
+      }
+      &_lower{
+        margin-top: 20px;
+      }
+    }
+  }
+  &_2{
+    width: 100%;
+    height: 560px;
+    &_title{
+      width: 100%;
+      height: 100px;
+      &_content{
+        margin-top: 40px;
+        width: 50%;
+        height: 100px;
+        margin: auto;
+        margin-top: 40px;
+        text-align: center;
+        font-size: 30px;
+      }
+    }
+    &_list{
+      display: flex;
+      width: 1300px;
+      margin: auto;
+      &_left{
+        width: 420px;
+        height: 420px;
+        &_image{
+          width: 300px;
+          height: 300px;
+          margin: auto;
+          background-image: url("/images/material/pict/pict-reason-01.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: top center;
+          &_m{
+            background-color: #3CCACE;
+            width: 45px;
+            height: 45px;
+            &_1{
+              width: 25px;
+              height: 25px;
+              padding: 4px 10px 10px 14px;
+              font-size: 33px;
+              color: #f8f8f8;
+            }
+          }
+        }
+        &_title{
+          text-align: center;
+          font-size: 30px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          &_m{
+            color: #3CCACE;
+          }
+        }
+        &_sentence{
+          text-align: center;
+        }
+      }
+      &_middle{
+        width: 420px;
+        height: 420px;
+        &_image{
+          width: 300px;
+          height: 300px;
+          margin: auto;
+          background-image: url("/images/material/pict/pict-reason-02.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: top center;
+          &_m{
+            background-color: #3CCACE;
+            width: 45px;
+            height: 45px;
+            &_2{
+              width: 25px;
+              height: 25px;
+              padding: 4px 10px 10px 14px;
+              font-size: 33px;
+              color: #f8f8f8;
+            }
+          }
+        }
+        &_title{
+          text-align: center;
+          font-size: 30px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          &_m{
+            color: #3CCACE;
+          }
+        }
+        &_sentence{
+          text-align: center;
+        }
+      }
+      &_right{
+        width: 420px;
+        height: 420px;
+        &_image{
+          width: 300px;
+          height: 300px;
+          margin: auto;
+          background-image: url("/images/material/pict/pict-reason-03.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: top center;
+          &_m{
+            background-color: #3CCACE;
+            width: 45px;
+            height: 45px;
+            &_3{
+              width: 25px;
+              height: 25px;
+              padding: 4px 10px 10px 14px;
+              font-size: 33px;
+              color: #f8f8f8;
+            }
+          }
+        }
+        &_title{
+          text-align: center;
+          font-size: 30px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          &_m{
+            color: #3CCACE;
+          }
+        }
+        &_sentence{
+          text-align: center;
+        }
+      }
+    }
+  }
+  &_3{
+    width: 100%;
+    height: 700px;
+    background-image: url("/images/material/pict/bg-topMiddleDl-pict.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    &_content{
+      width: 50%;
+      margin: 71px 10px 10px 98px;
+      &_top{
+        font-size: 50px;
+        margin-bottom: 30px;
+      }
+      &_middle{
+        font-size: 20px;
+      }
+    }
+  }
+  &_4{
+    width: 100%;
+    height: 560px;
+    &_title{
+      width: 100%;
+      height: 100px;
+      &_content{
+        margin-top: 40px;
+        width: 50%;
+        height: 100px;
+        margin: auto;
+        margin-top: 40px;
+        text-align: center;
+        font-size: 30px;
+      }
+    }
+    &_list{
+      display: flex;
+      width: 1300px;
+      margin: auto;
+      &_left{
+        margin-left: 120px;
+        &_image{
+          margin-left: 50px;
+        }
+        &_title{
+          font-size: 27px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        &_sentence{
+        }
+      }
+      &_middle{
+        margin-left: 80px;
+        &_image{
+          margin-left: 50px;
+        }
+        &_title{
+          font-size: 27px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        &_sentence{
+        }
+      }
+      &_right{
+        margin-left: 70px;
+        &_image{
+          margin-left: 50px;
+        }
+        &_title{
+          font-size: 27px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        &_sentence{
+        }
+      }
+    }
+  }
+  &_5{
+    width: 100%;
+    height: 500px;
+    margin-top: 75px;
+    padding-top: 75px;
+    background-color: rgb(226, 222, 222);
+    &_title{
+      width: 50%;
+      height: 70px;
+      margin: 0 auto;
+      font-size: 35px;
+      text-align: center;
+    }
+    &_content{
+      width: 100%;
+      height: 330px;
+      &_title{
+        width: 100%;
+        height: 30px;
+        &_n{
+          width: 50%;
+          margin: 0 auto;
+          text-align: center;
+          color: #3CCACE;
+          font-size: 25px;
+        }
+      }
+      &_list{
+        display: flex;
+        &_left{
+          margin-left: 310px;
+          &_top{
+            margin-left: 30px;
+          }
+          &_middle{
+            margin-left: 30px;
+            display: flex;
+            .middle_2{
+              margin-left: 60px;
+            }
+          }
+          &_lower{
+            margin-left: 30px;
+          }
+        }
+        &_middle{
+          margin-left: 100px;
+          &_top{
+            margin-left: 30px;
+          }
+          &_middle{
+            margin-left: 30px;
+            display: flex;
+            .middle_4{
+              margin-left: 60px;
+            }
+          }
+          &_lower{
+            margin-left: 30px;
+          }
+        }
+        &_right{
+          margin-left: 100px;
+          &_top{
+            margin-left: 30px;
+          }
+          &_middle{
+            margin-left: 30px;
+            display: flex;
+            .middle_6{
+              margin-left: 60px;
+            }
+          }
+          &_lower{
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}
