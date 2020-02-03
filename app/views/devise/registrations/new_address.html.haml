@@ -1,0 +1,46 @@
+.adress_content_text__main
+  = form_for @address, url: addresses_path, method: :post do |f|
+    .adress_content_text__main__person
+      郵便番号
+      .adress_content_text__main__person_required
+        必須
+    .adress_content_text__main__post_number_form
+      = f.text_field :zipcode
+    .adress_content_text__main__person
+      都道府県
+      .adress_content_text__main__person_required
+        必須
+    .adress_content_text__main__prefectures__form
+      .adress_content_text__main__prefectures__form_icon
+        %i.fas.fa-angle-down.1
+      =f.select :prefecture, ["------"], {}, {class: "select-default_prefectures", id:"selPref"}
+    .adress_content_text__main__person
+      市区町村
+      .adress_content_text__main__person_required
+        必須
+    .adress_content_text__main__municipality
+      .adress_content_text__main__person_name__last_name
+        = f.text_field :city
+    .adress_content_text__main__person
+      番地
+      .adress_content_text__main__person_required
+        必須
+    .adress_content_text__main__municipality
+      .adress_content_text__main__person_name__last_name
+        = f.text_field :detail_address
+    .adress_content_text__main__building
+      建物名
+      .adress_content_text__main__building__required
+        任意
+    .adress_content_text__main__municipality
+      .adress_content_text__main__person_name__last_name
+        = f.text_field :building
+    .adress_content_text__main__building
+      電話番号
+      .adress_content_text__main__building__required
+        任意
+    .adress_content_text__main__municipality
+      .adress_content_text__main__person_name__last_name
+        = f.text_field :optional_phone_number
+    .adress_content_text__main__prefectures__button
+      = f.submit "Next"

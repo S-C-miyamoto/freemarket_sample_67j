@@ -6,8 +6,8 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
 
   config.omniauth :google_oauth2,
-                  ENV['GOOGLE_APP_ID'],
-                  ENV['GOOGLE_APP_SECRET'],
+                  ENV['GOOGLE_APP_ID']='1011664176699-q0j3tthg2ai5dkjh2c4g6la32j26oa16.apps.googleusercontent.com',
+                  ENV['GOOGLE_APP_SECRET']='D4gfOoDA1y6Pth_psxpSVHpX',
                   name: :google
 
   config.omniauth :facebook,
