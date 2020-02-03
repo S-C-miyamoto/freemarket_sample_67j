@@ -1,0 +1,141 @@
+.mypage-wrapper
+  .mypage_side-bar
+    %nav.mypage-nav
+      %ul.mypage-nav_list
+        %li
+          %a{:href => "/users/mypage"}
+            マイページ
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => ""}
+            お知らせ
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            やることリスト
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            いいね！一覧
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "/items/sell"}
+            出品する
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            出品した商品-出品中
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            出品した商品-取引中
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            出品した商品-売却済み
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            購入した商品-取引中
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            購入した商品-過去の取引
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            ニュース一覧
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            評価一覧
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            ガイド
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            お問い合わせ
+            %i.fas.fa-chevron-right
+      %h3.mypage-nav__title.bolb メルペイ
+      %ul.mypage-nav__list
+        %li
+          %a{:href => "#"}
+            売上・振込申請
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            ポイント
+            %i.fas.fa-chevron-right
+      %h3.mypage-nav__title.bolb 設定
+      %ul.mypage-nav__list
+        %li
+          %a{:href => "/users/profile"}
+            プロフィール
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            発送元・お届先住所変更
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "/card/confirmation"}
+            支払い方法
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            メール/パスワード
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "/users/identity"}
+            本人情報
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "#"}
+            電話番号の確認
+            %i.fas.fa-chevron-right
+        %li
+          %a{:href => "/users/logout"}
+            ログアウト
+            %i.fas.fa-chevron-right
+  .mypage-main
+    %section.mypage-main__user-icon
+      %a{:href => "#"}
+        %img{:src => "/assets/member_photo_noimage_thumb-224a733c50d48aba6d9fdaded809788bbeb5ea5f6d6b8368adaebb95e58bcf53.png"}/
+        %h2.bolb
+          kazuho
+        .number
+          %p
+            評価
+            %span.bolb 0
+          %p
+            出品数
+            %span.bolb 0
+    %section.mypage-main__container
+      .tabs
+        %input#info{:checked => "checked", :name => "tab-radio", :type => "radio"}/
+        %label.tab-content{:for => "info"} お知らせ
+        %input#todo{:name => "tab-radio", :type => "radio"}/
+        %label.tab-content{:for => "todo"} やることリスト
+        .clear-shadow
+        .mypage-main__container__content.info
+          .mypage-main__container__content__none.bolb
+            現在、お知らせはありません
+        .mypage-main__container__content.todo
+          .mypage-main__container__content__none.bolb
+            現在、やることリストはありません
+    %section.mypage-main__container
+      %h2.mypage-main__container__title.bolb
+        購入した商品
+      .tabs
+        %input#trade{:checked => "checked", :name => "tab-check", :type => "radio"}/
+        %label.tab-content{:for => "trade"} 取引中
+        %input#completion{:name => "tab-check", :type => "radio"}/
+        %label.tab-content{:for => "completion"} 過去の取引
+        .clear-shadow
+        .mypage-main__container__content.trade
+          .mypage-main__container__content__none.bolb
+            取引中の商品がありません
+        .mypage-main__container__content.completion
+          .mypage-main__container__content__none.bolb
+            過去に取引した商品がありません
