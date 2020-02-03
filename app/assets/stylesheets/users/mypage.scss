@@ -1,3 +1,56 @@
+*, ::before ,::after {
+  border-style: solid;
+  border-width: 0;
+  box-sizing: border-box;
+}
+
+
+.mypage{
+  &_main{
+    width: calc(100% - 300px);
+    &_container{
+      &_title{
+        margin: 40px 0 0;
+        padding: 0 16px;
+        background: #fafafa;
+        font-size: 16px;
+        line-height: 72px;
+      }
+      &_content{
+        background-color: #fff;
+        display: none;
+        &_none{
+          padding: 160px 0 60px;
+          background-image: url(/assets/logo_gray-e3ad057db40ffd0cc55504b42f202a5e52a9df050b0f838d8ee7d551d0e41e24.svg);
+          background-repeat: no-repeat;
+          background-position: center 40px;
+          background-size: 78px 85px;
+          text-align: center;
+          font-size: 16px;
+          color: #ccc;
+        }
+      }
+      height: 300px;
+      .tabs{
+        height: 75px;
+        input[name="tab-radio"]:checked + .tab-content{
+          background-color: #fff;
+          border-top: 2px solid #ea352d;
+        }
+        input[name="tab-check"]:checked + .tab-content{
+          background-color: #fff;
+          border-top: 2px solid #ea352d;
+        }
+        .clear-shadow:after{
+            content: '';
+            display: block;
+            clear: both;
+          }
+        input[name="tab-radio"]{
+          display: none;
+        }
+        input[name="tab-check"]{
+          display: none;
         }
         .tab-content{
           background: #eee;
