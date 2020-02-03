@@ -5,21 +5,17 @@
         %img.furima{src: "/images/material/logo/logo.png", width: "200", height: "50"}/
       .header_content_up_search
         .header_content_up_search_bar
-          .search 
+          %input.search 
           %button.subnit{type: "submit"}
             %img.search_sub{src: "/images/material/icon/icon-search 1.png", width: "35", height: "35"}/
     .header_content_lower
       .header_content_lower_left
         .header_content_lower_left_category
-          カテゴリ
-          /= link_to '#' class: categoory do
+          = link_to 'カテゴリ', class: "categoory"
         .header_content_lower_left_brand
-          ブランド
-          /= link_to '#' class: brand do
+          = link_to 'ブランド', class: "brand" 
       .header_content_lower_right
         .header_content_lower_right_login
-          ログイン
-          /= link_to user_session() do
+          = link_to 'ログイン', new_user_session_path, class: "log_in"
         .header_content_lower_right_register
-          新規登録
-          /= link_to new_user_registration_path() do
+          = link_to '新規登録', users_path, class: "sing_up"

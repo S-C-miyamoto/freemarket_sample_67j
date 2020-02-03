@@ -14,6 +14,8 @@
 }
 
 .sign-up_contents{
+  height: calc(100vh - 210px);
+  padding-top: 70px;
   &_top{
     margin: 0 auto;
     font-size: 20px;
@@ -41,7 +43,7 @@
         display: block;
         height: 50px;
         width: 343px;
-        margin-bottom: 16px;
+        margin-bottom: 50px;
         border-radius: 10px;
         line-height: 50px;
       }
@@ -56,7 +58,7 @@
         display: block;
         height: 50px;
         width: 343px;
-        margin-bottom: 16px;
+        margin-bottom: 50px;
         border-radius: 10px;
         line-height: 50px;
       }
