@@ -14,7 +14,7 @@ class User < ApplicationRecord
         end
 
   validates :email,             presence: {message: "メールを入力してください"}, uniqueness: { case_sensitive: false }
-  validates :nickname, :age,    presence: true, length: { maximum: 20 }
+  validates :nickname,          presence: true, length: { maximum: 20 }
   validates :password,          presence: true, length: {minimum: 7}
 
   has_one :address

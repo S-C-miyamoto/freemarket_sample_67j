@@ -155,7 +155,7 @@
     margin: 0 auto;
     padding: 40px 40px 65px;
     &_nickname{
-      padding-left: 170px;
+      justify-content: center;
       display: flex;
       font-weight: bold;
       font-size: 15px;
@@ -187,7 +187,7 @@
       }
     }
     &_mail-address{
-      padding-left: 170px;
+      justify-content: center;
       padding-top: 32px;
       display: flex;
       font-weight: bold;
@@ -220,7 +220,7 @@
       }
     }
     &_password{
-      padding-left: 170px;
+      justify-content: center;
       padding-top: 32px;
       display: flex;
       font-weight: bold;
@@ -258,8 +258,8 @@
     }
     &_checkbox{
       display: flex;
+      justify-content: center;
       position: relative;
-      margin-left: 170px;
       margin-top: 20px;
       &_btn{
         top: 50%;
@@ -280,7 +280,7 @@
       }
     }
     &_person{
-      padding-left: 170px;
+      justify-content: center;
       padding-top: 20px;
       font-weight: bold;
       font-size: 17px;
@@ -303,6 +303,7 @@
       }
       &_name{
         display: flex;
+        // justify-content: center;
         &_last_name{
           &_btn{
             margin: 8px 0 0;
@@ -336,7 +337,7 @@
       }
     }
     &_birthday{
-      padding-left: 170px;
+      justify-content: center;
       padding-top: 20px;
       font-weight: bold;
       font-size: 17px;
@@ -354,8 +355,8 @@
       &_text{
         padding-left: 170px;
         padding-right: 170px;
-        padding-top: 10px;
-        padding-bottom: 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
         color: grey;
       }
       &_btn{
@@ -375,7 +376,7 @@
       }
       &_form{
         display: flex;
-        padding-left: 170px;
+        justify-content: center;
         padding-top: 10px;
         position: relative;
         .select-default_year{
@@ -398,7 +399,7 @@
           padding-left: 5px;
           padding-right: 5px;
           padding-top: 20px;
-        } 
+        }
       }
     }
   }
