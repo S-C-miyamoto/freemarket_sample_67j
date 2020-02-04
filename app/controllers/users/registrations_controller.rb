@@ -18,6 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @address = Address.new(address_params)
     @user.build_address(@address.attributes)
     @user.save
+    sign_in(:user, @user)
     redirect_to signup_path
   end
 
