@@ -4,14 +4,16 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.build
+    3.times {@item.images.build}
   end
 
   def create
     @item = Item.new(item_parameter)
+    @item = Item.new(item_parameter.merge(seller_id: current_user.id))
+    @item.save
   end
 
   def item_parameter
-    params.require(:item).permit(:name, :state, :condition, :price, product_images_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :state, :condition, :price, images_attributes: [:image])
   end
 end
