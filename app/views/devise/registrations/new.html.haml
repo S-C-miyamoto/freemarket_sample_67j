@@ -32,6 +32,7 @@
         .member-info_header_pankuzu_done_text_status
           ●
 
+
 .member-info_contents
   = form_with model: @user, url: addresses_path, method: :get, id: "new_user", class: 'member-info_contents_new_user', local: true do |f|
     = render "devise/shared/error_messages", resource: @user
