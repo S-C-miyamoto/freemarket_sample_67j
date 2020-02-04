@@ -1,5 +1,6 @@
 = render partial: "items/top"
 
+
 .mypage_contents
   .mypage_wrapper
     .mypage_side-bar
@@ -102,24 +103,78 @@
               ログアウト
               %i.fas.fa-chevron-right
 
-    .card_main_content.clearfix
-      .card_main_content_right
-        %section.card_main_content_right_all
-          %h2.card_main_content_right_head 支払い方法
-          .card_main_content_right_head_inner
-            %section
-              .card_main_content_center
-                %h3.card_main_content_sub_head クレジットカード一覧
-              %ul.settings_payment_list
-            %section.settings_add_card
-              .single_content
-                .submit_btn
-                  %i.fas.fa-credit-card
-                    %a.creditbtn{:href => "/card/new"}
-                      クレジットカードを追加する
-            .settings_not_regist
-              %a.credittext{:href => "#"}
-                支払い方法について&gt;
+
+    .creditcard-main
+      %h2.chapter-head.bolb
+        クレジットカード情報入力
+      %form#charge-form.card-form{"accept-charset" => "UTF-8", :action => "/card/pay", :method => "post"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %input{:name => "authenticity_token", :type => "hidden", :value => "PQAPVAka5zyjtSegQy7mC3Ftm5bwjLttrr0pQvYQX+DbSj8Oj3lmdi3kpHxcGCDCPIOxO4cZ+JBWgENiHdPgGg=="}/
+        .card-form_content
+          %label.bolb
+            カード番号
+          %span.form-necessary
+            必須
+          %input#card_number.input-text-field{:maxlength => "19", :name => "card_number", :placeholder => "半角数字のみ", :size => "19", :type => "text"}/
+          %img{:height => "20", :src => "/assets/visa-c16fe231d582b59d3b0058c293280580cad2d1d378f75dff669b8ac31fe3a97f.svg", :width => "49"}/
+          %img{:height => "20", :src => "/assets/master-card-85842fa1b6d67b20df737e55dc33e397e769b19322498a6c05e8e91c322e3e24.svg", :width => "34"}/
+          %img{:height => "20", :src => "/assets/saison-card-22d5d06b10305ee4c8d2c38fd8100dafed0f8f5a9319b3e864b621d136c0a94c.svg", :width => "30"}/
+          %img{:height => "20", :src => "/assets/jcb-1368496dcf790f8c6761d3f15afed0dab0c1d9fb688f168bae6666fbf5480e4c.svg", :width => "32"}/
+          %img{:height => "20", :src => "/assets/american_express-fb9a3870ca5afbfd68c5889309863bf142907462e9343a65d913645f350ed46d.svg", :width => "21"}/
+          %img{:height => "20", :src => "/assets/dinersclub-91c36d9ea8e683e8aef2c4a2582df11091498d58de499e7ed73c92e09b483850.svg", :width => "32"}/
+          %img{:height => "20", :src => "/assets/discover-f7874ba3a3f5aec139434a99afe2cd4f519ed22531bdf77eff6a7f69291b2623.svg", :width => "32"}/
+        .card-form_content
+          %label.bolb
+            有効期限
+          %span.form-necessary
+            必須
+          .card-form_content_division
+            .select-wrap
+              %i.fas.fa-chevron-down.select-wrap_icon2
+              %select#exp_month.select-credit{:name => "exp_month"}
+                %option{:value => "1"} 01
+                %option{:value => "2"} 02
+                %option{:value => "3"} 03
+                %option{:value => "4"} 04
+                %option{:value => "5"} 05
+                %option{:value => "6"} 06
+                %option{:value => "7"} 07
+                %option{:value => "8"} 08
+                %option{:value => "9"} 09
+                %option{:value => "10"} 10
+                %option{:value => "11"} 11
+                %option{:value => "12"} 12
+              %span
+                月
+            .select-wrap
+              %i.fas.fa-chevron-down.select-wrap_icon2
+              %select#exp_year.select-credit{:name => "exp_year"}
+                %option{:value => "2019"} 19
+                %option{:value => "2020"} 20
+                %option{:value => "2021"} 21
+                %option{:value => "2022"} 22
+                %option{:value => "2023"} 23
+                %option{:value => "2024"} 24
+                %option{:value => "2025"} 25
+                %option{:value => "2026"} 26
+                %option{:value => "2027"} 27
+                %option{:value => "2028"} 28
+                %option{:value => "2029"} 29
+              %span
+                年
+        .card-form_content
+          %label.bolb
+            セキュリティーコード
+          %span.form-necessary
+            必須
+          %input#cvc.input-text-field{:maxlength => "4", :name => "cvc", :placeholder => "カード背面4桁もしくは3桁の番号", :size => "4", :type => "text"}/
+          #card_token
+        .card-form_content
+          %input#token_submit.submit-btn{"data-disable-with" => "追加する", :name => "commit", :type => "submit", :value => "追加する"}/
+          %p.text-right
+            %a{:href => "#"}
+              %i.fas.fa-question-circle
+              カード裏面の番号とは？
 
 
 
