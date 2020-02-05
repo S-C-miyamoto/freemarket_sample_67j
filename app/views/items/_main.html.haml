@@ -104,7 +104,7 @@
         %h3.main_5_content_title_n
           新規投稿商品
       .main_5_content_list
-        .main_5_content_list_left
+        = link_to item_path(id = 1), class: "main_5_content_list_left" do
           %img.main_5_content_list_left_image{src: "/a007.png", width: "250", height: "250"}
           %p.main_5_content_list_left_top
             product3
