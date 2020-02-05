@@ -1013,6 +1013,11 @@ GEM
     erubis (2.7.0)
     excon (0.72.0)
     execjs (2.7.0)
+    factory_bot (5.1.1)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
     faker (2.10.1)
       i18n (>= 1.6, < 2)
     faraday (1.0.0)
@@ -1305,6 +1310,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   erb2haml
+  factory_bot_rails
   faker
   fog-aws
   font-awesome-rails
