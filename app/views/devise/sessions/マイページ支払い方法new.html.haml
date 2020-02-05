@@ -1,0 +1,126 @@
+= render partial: "items/top"
+
+.mypage_contents
+  .mypage_wrapper
+    .mypage_side-bar
+      %nav.mypage_nav
+        %ul.mypage_nav_list
+          %li
+            %a{:href => "/users/mypage"}
+              マイページ
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              お知らせ
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              やることリスト
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              いいね！一覧
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "/items/sell"}
+              出品する
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              出品した商品-出品中
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              出品した商品-取引中
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              出品した商品-売却済み
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              購入した商品-取引中
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              購入した商品-過去の取引
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              ニュース一覧
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              評価一覧
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              ガイド
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              お問い合わせ
+              %i.fas.fa-chevron-right
+        %h3.mypage_nav_title.bolb メルペイ
+        %ul.mypage_nav_list
+          %li
+            %a{:href => "#"}
+              売上・振込申請
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              ポイント
+              %i.fas.fa-chevron-right
+        %h3.mypage_nav_title.bolb 設定
+        %ul.mypage_nav_list
+          %li
+            %a{:href => "/users/profile"}
+              プロフィール
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              発送元・お届先住所変更
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "/card/confirmation"}
+              支払い方法
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              メール/パスワード
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "/users/identity"}
+              本人情報
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "#"}
+              電話番号の確認
+              %i.fas.fa-chevron-right
+          %li
+            %a{:href => "/users/logout"}
+              ログアウト
+              %i.fas.fa-chevron-right
+
+    .payment_main_content.clearfix
+      .payment_main_content_right
+        %section.payment_main_content_right_all
+          %h2.payment_main_content_right_head 支払い方法
+          .payment_main_content_right_head_inner
+            %section
+              .payment_main_content_center
+                %h3.payment_main_content_sub_head クレジットカード一覧
+              %ul.settings_payment_list
+            %section.settings_add_card
+              .single_content
+                .submit_btn
+                  %i.fas.fa-credit-card
+                    %a.creditbtn{:href => "/card/new"}
+                      クレジットカードを追加する
+            .settings_not_regist
+              %a.credittext{:href => "#"}
+                支払い方法について&gt;
+
+
+
+= render partial: "items/fooder"

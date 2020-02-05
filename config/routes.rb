@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions: 'devise/sessions'
   }
 
   devise_scope :user do
@@ -13,5 +14,9 @@ Rails.application.routes.draw do
   end
 
   root 'items#index'
-  resources :items, only: [:show]
+
+  resources :items do
+    resources :images
+  end
+
 end

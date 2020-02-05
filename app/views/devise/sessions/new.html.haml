@@ -1,141 +1,65 @@
-.mypage-wrapper
-  .mypage_side-bar
-    %nav.mypage-nav
-      %ul.mypage-nav_list
-        %li
-          %a{:href => "/users/mypage"}
-            マイページ
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => ""}
-            お知らせ
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            やることリスト
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            いいね！一覧
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "/items/sell"}
-            出品する
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            出品した商品-出品中
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            出品した商品-取引中
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            出品した商品-売却済み
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            購入した商品-取引中
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            購入した商品-過去の取引
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            ニュース一覧
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            評価一覧
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            ガイド
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            お問い合わせ
-            %i.fas.fa-chevron-right
-      %h3.mypage-nav__title.bolb メルペイ
-      %ul.mypage-nav__list
-        %li
-          %a{:href => "#"}
-            売上・振込申請
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            ポイント
-            %i.fas.fa-chevron-right
-      %h3.mypage-nav__title.bolb 設定
-      %ul.mypage-nav__list
-        %li
-          %a{:href => "/users/profile"}
-            プロフィール
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            発送元・お届先住所変更
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "/card/confirmation"}
-            支払い方法
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            メール/パスワード
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "/users/identity"}
-            本人情報
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "#"}
-            電話番号の確認
-            %i.fas.fa-chevron-right
-        %li
-          %a{:href => "/users/logout"}
-            ログアウト
-            %i.fas.fa-chevron-right
-  .mypage-main
-    %section.mypage-main__user-icon
-      %a{:href => "#"}
-        %img{:src => "/assets/member_photo_noimage_thumb-224a733c50d48aba6d9fdaded809788bbeb5ea5f6d6b8368adaebb95e58bcf53.png"}/
-        %h2.bolb
-          kazuho
-        .number
-          %p
-            評価
-            %span.bolb 0
-          %p
-            出品数
-            %span.bolb 0
-    %section.mypage-main__container
-      .tabs
-        %input#info{:checked => "checked", :name => "tab-radio", :type => "radio"}/
-        %label.tab-content{:for => "info"} お知らせ
-        %input#todo{:name => "tab-radio", :type => "radio"}/
-        %label.tab-content{:for => "todo"} やることリスト
-        .clear-shadow
-        .mypage-main__container__content.info
-          .mypage-main__container__content__none.bolb
-            現在、お知らせはありません
-        .mypage-main__container__content.todo
-          .mypage-main__container__content__none.bolb
-            現在、やることリストはありません
-    %section.mypage-main__container
-      %h2.mypage-main__container__title.bolb
-        購入した商品
-      .tabs
-        %input#trade{:checked => "checked", :name => "tab-check", :type => "radio"}/
-        %label.tab-content{:for => "trade"} 取引中
-        %input#completion{:name => "tab-check", :type => "radio"}/
-        %label.tab-content{:for => "completion"} 過去の取引
-        .clear-shadow
-        .mypage-main__container__content.trade
-          .mypage-main__container__content__none.bolb
-            取引中の商品がありません
-        .mypage-main__container__content.completion
-          .mypage-main__container__content__none.bolb
-            過去に取引した商品がありません
+
+.login_header
+  %img.login_header_image{:height => "100", :src => "/images/material/logo/J_Team_Logo.png", :width => "200"}/
+  .login_header_logo
+    %img{:height => "100", :src => "/images/material/logo/logo.png", :width => "200"}/
+    
+.login_contents
+  .login_contents_top
+    .login_contents_top_mail-btn
+      %a.new_register_mail{"data-method" => "get", :href => ""}
+        %i.far.fa-envelope
+          新規会員登録
+
+  .login_contents_main
+    .login_contents_main_facebook_btn
+      %a.new_register_facebook{"data-method" => "post", :href => "/users/auth/facebook", :rel => "nofollow"}
+        %i.fab.fa-facebook-square
+          Facebookでログイン
+
+    .login_contents_main_google_btn
+      %a.new_register_google{"data-method" => "post", :href => "/users/auth/google_oauth2", :rel => "nofollow"}
+        %i.fab.fa-google
+          Googleでログイン
+
+    .login_contents_main_mailaddress
+      %input#user_email.login_contents_main_mailaddress_btn{:name => "user[email]", :placeholder => "メールアドレス", :type => "email"}/
+
+    .login_contents_main_password
+      %input#user_password.login_contents_main_password_btn{:name => "user[password]", :placeholder => "パスワード", :type => "password"}/
+    .login_contents_main_recaptcha
+      %script{:async => "", :defer => "defer", :src => "https://www.recaptcha.net/recaptcha/api.js"}
+      .g-recaptcha{"data-sitekey" => "6LcpqM4UAAAAAOPkNNNzVO3VmHb7ms9A1R0x3fyG"}
+        %div{:style => "width: 304px; height: 78px;"}
+          %div
+            %iframe{:frameborder => "0", :height => "78", :name => "a-rkiryc5gbv3b", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LcpqM4UAAAAAOPkNNNzVO3VmHb7ms9A1R0x3fyG&co=aHR0cDovL2xvY2FsaG9zdDozMDAw&hl=ja&v=RDiPdrU_gv1XhhWy6nqfMf9O&size=normal&cb=rpcf1vebry57", :width => "304"}
+          %textarea#g-recaptcha-response.g-recaptcha-response{:name => "g-recaptcha-response", :style => "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
+      %noscript
+        %div
+          %div{:style => "width: 302px; height: 422px; position: relative;"}
+            %div{:style => "width: 302px; height: 422px; position: absolute;"}
+              %iframe{:name => "ReCAPTCHA", :src => "https://www.recaptcha.net/recaptcha/api/fallback?k=6LcpqM4UAAAAAOPkNNNzVO3VmHb7ms9A1R0x3fyG", :style => "width: 302px; height: 422px; border-style: none; border: 0; overflow: hidden;"}
+          %div{:style => "width: 300px; height: 60px; border-style: none;\n                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;\n                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;"}
+            %textarea#g-recaptcha-response.g-recaptcha-response{:name => "g-recaptcha-response", :style => "width: 250px; height: 40px; border: 1px solid #c1c1c1;\n                  margin: 10px 25px; padding: 0px; resize: none;"}
+              :preserve
+              
+    .login_contents_main_login-btn
+      %input.login_contents_main_login-btn{"data-disable-with" => "ログイン", :name => "commit", :type => "submit", :value => "ログイン"}/
+
+.login_footer
+  .login_footer_contents
+    .login_footer_contents_links
+      %ul
+        %a.login_footer_contents_links_1{:href => ""}
+          %li プライバシーポリシー
+      %ul
+        %a.login_footer_contents_links_2{:href => "/"}
+          %li Fmarket利用規約
+      %ul
+        %a.login_footer_contents_links_3{:href => "/"}
+          %li 特定商取引に関する表記
+    .login_footer_contents_logo
+      %a.login_footer_contents_logo_link{:href => "/"}
+        %img.login_footer_contents_logo_image{:src => "/images/material/logo/logo_gray.svg"}/
+    .login_footer_contents_inc
+      ©︎Fmarket,inc.
