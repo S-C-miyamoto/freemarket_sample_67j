@@ -4,13 +4,14 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    3.times {@item.images.build}
+    4.times {@item.images.build}
   end
 
   def create
     @item = Item.new(item_parameter)
     @item = Item.new(item_parameter.merge(seller_id: current_user.id))
     @item.save
+    redirect_to :root
   end
 
   def item_parameter

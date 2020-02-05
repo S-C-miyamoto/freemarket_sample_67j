@@ -38,6 +38,9 @@
       display: flex;
       &_left{
         display: flex;
+        a {
+          color: black;
+        }
         &_brand{
           margin-left: 15px;
         }
@@ -45,6 +48,9 @@
       &_right{
         display: flex;
         margin-left: 500px;
+        a {
+          color: black;
+        }
         &_login{
           margin-right: 5px;
         }

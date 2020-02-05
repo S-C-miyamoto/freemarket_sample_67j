@@ -277,8 +277,9 @@
       }
       &_list{
         display: flex;
+        justify-content: center;
         &_left{
-          margin-left: 420px;
+          // margin-left: 420px;
           &_top{
             margin-left: 30px;
           }
@@ -356,8 +357,9 @@
       }
       &_list{
         display: flex;
+        justify-content: center;
         &_left{
-          margin-left: 420px;
+          // margin-left: 420px;
           &_top{
             margin-left: 30px;
           }
@@ -419,7 +421,7 @@
     display: flex;
     align-items: center;
     &_content{
-      margin-left: 85px;
+      margin: 0 auto;
       &_top{
         font-size: 25px;
         color: #f8f8f8;
