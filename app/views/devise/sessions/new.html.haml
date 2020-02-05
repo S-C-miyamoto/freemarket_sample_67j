@@ -3,11 +3,11 @@
   %img.login_header_image{:height => "100", :src => "/images/material/logo/J_Team_Logo.png", :width => "200"}/
   .login_header_logo
     %img{:height => "100", :src => "/images/material/logo/logo.png", :width => "200"}/
-    
+
 .login_contents
   .login_contents_top
     .login_contents_top_mail-btn
-      %a.new_register_mail{"data-method" => "get", :href => ""}
+      = link_to users_path, method: :get, class:"new_register_mail" do
         %i.far.fa-envelope
           新規会員登録
 
@@ -42,7 +42,7 @@
           %div{:style => "width: 300px; height: 60px; border-style: none;\n                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;\n                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;"}
             %textarea#g-recaptcha-response.g-recaptcha-response{:name => "g-recaptcha-response", :style => "width: 250px; height: 40px; border: 1px solid #c1c1c1;\n                  margin: 10px 25px; padding: 0px; resize: none;"}
               :preserve
-              
+
     .login_contents_main_login-btn
       %input.login_contents_main_login-btn{"data-disable-with" => "ログイン", :name => "commit", :type => "submit", :value => "ログイン"}/
 
