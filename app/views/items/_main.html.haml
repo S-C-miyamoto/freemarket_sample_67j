@@ -103,6 +103,25 @@
       .main_5_content_title
         %h3.main_5_content_title_n
           新規投稿商品
+      -#     # カテゴリー一覧を作る
+      -#   .new_items__contents__grid
+      -# - result_items.each_with_index do |item, i|
+      -# .new_items__contents__grid
+      -# - result_items.each_with_index do |item, i|
+      -#   .new_items__contents__grid__item
+      -#     = link_to item_path(item) do
+      -#       = image_tag item.images.first.image.url, class: "new_items__contents__grid__item__image"
+      -#       .new_items__contents__grid__item__price
+      -#         ¥
+      -#         = item.price
+      -#       .new_items__contents__grid__item__name
+      -#         = item.name
+      -#         %br/
+      -#         = item.category.name
+      -#       - if item.level == 2
+      -#         .soldout
+      -#           .soldout__name
+      -#             sold
       .main_5_content_list
         = link_to item_path(id = 1), class: "main_5_content_list_left" do
           %img.main_5_content_list_left_image{src: "/a007.png", width: "250", height: "250"}
