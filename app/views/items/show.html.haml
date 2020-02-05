@@ -1,0 +1,128 @@
+= render partial: "top"
+%nav.show_nav
+  こんばんわ
+.show_main
+  .show_main_1
+    .show_main_1_left
+    .show_main_1_right
+      .show_main_1_right_main
+        .show_main_1_right_main_item
+          %h2.show_main_1_right_main_item_name
+            products3
+          .show_main_1_right_main_item_body
+            %ul.show_main_1_right_main_item_body_1
+              %li.show_main_1_right_main_item_body_1_2
+                %img.show_main_1_right_main_item_body_1_2_3{src: "/a007.png"}
+                %ul.show_main_1_right_main_item_body_1_2_4
+                  %li.show_main_1_right_main_item_body_1_2_4_1
+                    %img.show_main_1_right_main_item_body_1_2_4_1_image{src: "/a007.png"}
+                  %li.show_main_1_right_main_item_body_1_2_4_2
+                    %img.show_main_1_right_main_item_body_1_2_4_2_image{src: "/a004.png"}
+                  %li.show_main_1_right_main_item_body_1_2_4_3
+                    %img.show_main_1_right_main_item_body_1_2_4_3_image{src: "/a003.png"}
+          .show_main_1_right_main_item_price
+            %span.show_main_1_right_main_item_price_1
+              ¥30000
+            .show_main_1_right_main_item_price_detail
+              %span.show_main_1_right_main_item_price_detail_1
+                (税込)
+              %span.show_main_1_right_main_item_price_detail_2
+                送料込み
+          .show_main_1_right_main_item_detail
+            products3
+          .show_main_1_right_main_item_table
+            %table.show_main_1_right_main_item_table_tbody
+              %tbody.show_main_1_right_main_item_table_tbody_1
+                %tr.show_main_1_right_main_item_table_tbody_1_1
+                  %th.show_main_1_right_main_item_table_tbody_1_1_1
+                    出品者
+                  %td.show_main_1_right_main_item_table_tbody_1_1_2
+                    hoge
+                %tr.show_main_1_right_main_item_table_tbody_1_2
+                  %th.show_main_1_right_main_item_table_tbody_1_2_1
+                    カテゴリー
+                  %td.show_main_1_right_main_item_table_tbody_1_2_2
+                    %a.show_main_1_right_main_item_table_tbody_1_2_2_1
+                      ベビー・キッズ
+                    %a.show_main_1_right_main_item_table_tbody_1_2_2_2
+                      ベビー服(男女兼用) ~95cm
+                    %a.show_main_1_right_main_item_table_tbody_1_2_2_3
+                      アウター
+                %tr.show_main_1_right_main_item_table_tbody_1_3
+                  %th.show_main_1_right_main_item_table_tbody_1_3_1
+                    ブランド
+                  %td.show_main_1_right_main_item_table_tbody_1_3_2
+                %tr.show_main_1_right_main_item_table_tbody_1_4
+                  %th.show_main_1_right_main_item_table_tbody_1_4_1
+                    商品のサイズ
+                  %td.show_main_1_right_main_item_table_tbody_1_4_2
+                %tr.show_main_1_right_main_item_table_tbody_1_5
+                  %th.show_main_1_right_main_item_table_tbody_1_5_1
+                    商品の状態
+                  %td.show_main_1_right_main_item_table_tbody_1_5_2
+                    未使用に近い
+                %tr.show_main_1_right_main_item_table_tbody_1_6
+                  %th.show_main_1_right_main_item_table_tbody_1_6_1
+                    配送料の一覧
+                  %td.show_main_1_right_main_item_table_tbody_1_6_2
+                    送料込み(出品者負担)
+                %tr.show_main_1_right_main_item_table_tbody_1_7
+                  %th.show_main_1_right_main_item_table_tbody_1_7_1
+                    発送元の地域
+                  %td.show_main_1_right_main_item_table_tbody_1_7_2
+                    岩手県
+                %tr.show_main_1_right_main_item_table_tbody_1_8
+                  %th.show_main_1_right_main_item_table_tbody_1_8_1
+                    発送日の目安
+                  %td.show_main_1_right_main_item_table_tbody_1_8_2
+                    4-7日で発送
+          .show_main_1_right_main_item_area
+            %ul.show_main_1_right_main_item_area_1
+              %li.show_main_1_right_main_item_area_1_like{id: "like"}
+                %i{class: "fa fa-star"}
+                お気に入り0
+            %ul.show_main_1_right_main_item_area_2
+              %li.show_main_1_right_main_item_area_2_btn
+                %a.show_main_1_right_main_item_area_2_btn_1{href: "#"}
+                  %i{class:"fa fa-flag"}
+                  不適切な商品の通報
+        .show_main_1_right_main_comment
+          %ul.show_main_1_right_main_comment_u
+          %form.show_main_1_right_main_comment_content{id: "new_comment", action: "#", accept_charset: "UTF-8", method: "post"}
+            %input{name: "utf8", type: "hidden", value: ""}
+            %input{type:"hidden", name: "token", value: ""}
+            %textarea{required: "required", name: "comment[body]", id: "comment_body"}
+            %p.show_main_1_right_main_comment_content_msg
+              相手のことを考えて相手のことを考えて丁寧な丁寧なコメント丁寧なコメントを心がけましょう。
+              %br
+                不快な言葉遣いなどは利用制限や退会処分になることがあります。
+            %button.show_main_1_right_main_comment_content_btn
+              %i.show_main_1_right_main_comment_content_btn_icon
+              コメントする
+      .show_main_1_right_main_link
+        %li.show_main_1_right_main_link_1
+          %a.show_main_1_right_main_link_1_be
+            %i{class: "fa fa-angle-left"}
+            %span.show_main_1_right_main_link_1_be_1
+              前の商品
+        %li.show_main_1_right_main_link_2
+          %a.show_main_1_right_main_link_2_af
+            %span.show_main_1_right_main_link_2_af_2
+              後の商品
+            %i{class: "fa fa-angle-right"}
+      .show_main_1_right_main_related
+        %a.show_main_1_right_main_related_item
+          ベビー・キッズををもっと見る
+        .show_main_1_right_main_related_product
+%aside.show_aside
+  .show_aside_content
+    %h2.show_aside_content_title
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p.show_aside_content_text
+      今すぐ無料ダウンロード！
+    .show_aside_content_icon
+      %a.show_aside_content_icon_apple
+        %img.show_aside_content_icon_apple_icon{src: "/app.svg", width: "200", height: "50"}/
+      %a.show_aside_content_icon_google
+        %img.show_aside_content_icon_google_icon{src: "/google.svg", width: "200", height: "50"}/
+= render partial: "fooder"
