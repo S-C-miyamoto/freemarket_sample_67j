@@ -1,0 +1,157 @@
+
+.mypage{
+  &_main{
+    width: calc(100% - 300px);
+    &_container{
+      &_title{
+        margin: 40px 0 0;
+        padding: 0 16px;
+        background: #fafafa;
+        font-size: 16px;
+        line-height: 72px;
+      }
+      &_content{
+        background-color: #fff;
+        display: none;
+        &_none{
+          padding: 160px 0 60px;
+          background-image: url(/assets/logo_gray-e3ad057db40ffd0cc55504b42f202a5e52a9df050b0f838d8ee7d551d0e41e24.svg);
+          background-repeat: no-repeat;
+          background-position: center 40px;
+          background-size: 78px 85px;
+          text-align: center;
+          font-size: 16px;
+          color: #ccc;
+        }
+      }
+      height: 300px;
+      .tabs{
+        height: 75px;
+        input[name="tab-radio"]:checked + .tab-content{
+          background-color: #fff;
+          border-top: 2px solid #ea352d;
+        }
+        input[name="tab-check"]:checked + .tab-content{
+          background-color: #fff;
+          border-top: 2px solid #ea352d;
+        }
+        .clear-shadow:after{
+            content: '';
+            display: block;
+            clear: both;
+          }
+        input[name="tab-radio"]{
+          display: none;
+        }
+        input[name="tab-check"]{
+          display: none;
+        }
+        .tab-content{
+          background: #eee;
+          width: 50%;
+          float: left;
+          line-height: 74px;
+          text-align: center;
+        }
+      }
+    }
+    &_user-icon{
+      background-image: url(/assets/user-bg-762d796b816a986686433312249269b0e64a023a86f7975b0b2e8f01de401385.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      height: 200px;
+      font-size: 14px;
+      text-align: center;
+      a{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translate(0, -50%);
+        color: #333;
+        .number{
+          margin: 8px 0 0;
+          p{
+            display: inline-block;
+            margin: 0 0 0 16px;
+            span{
+              margin: 0 0 0 8px;
+            }
+          }
+        }
+        h2{
+          margin: 8px 0 0;
+        }
+      }
+      img{
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+    }
+  }
+  &_contents{
+    width: 100%;
+    background-color: #f5f5f5;
+  }
+  &_wrapper{
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 1020px;
+    display: flex;
+    color: #333;
+  }
+  &_side-bar{
+    width: 280px;
+    margin: 0 40px 0 0;
+  }
+  &_nav{
+    &_list{
+      background-color: #fff;
+      li{
+        border-top: 1px solid #eee;
+        a{
+          position: relative;
+          display: block;
+          height: 48px;
+          padding: 16px;
+          font-size: 14px;
+          color: #333;
+          i{
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            color: #ccc;
+            .fas{
+              -webkit-font-smoothing: antialiased;
+              display: inline-block;
+              font-style: normal;
+              font-variant: normal;
+              text-rendering: auto;
+              line-height: 1;
+            }
+          }
+        }
+      }
+    }
+    &_title{
+      margin: 40px 0 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+}
+
+
+.mypage_main_container .tabs #info:checked ~ .info, .mypage_main_container .tabs #todo:checked ~ .todo{
+  display: block;
+}
+.mypage_main_container .tabs #trade:checked ~ .trade, .mypage_main_container .tabs #completion:checked ~ .completion{
+  display: block;
+}
+
+
+
