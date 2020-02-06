@@ -106,7 +106,8 @@
 
     .logout-submit
       .logout-submit_bar
-        %a.logout-submit_bar.logout-submit_bar_red.submit{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"} ログアウト
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-submit_bar logout-submit_bar_red submit"
+        -# %a.logout-submit_bar.logout-submit_bar_red.submit{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"} ログアウト
 
 
 = render partial: "items/fooder"

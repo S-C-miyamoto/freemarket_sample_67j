@@ -2,7 +2,8 @@
   .header_content
     .header_content_up
       .header_content_up_icon
-        %img.furima{src: "/images/material/logo/logo.png", width: "200", height: "50"}/
+        = link_to root_path do
+          %img.furima{src: "/images/material/logo/logo.png", width: "200", height: "50"}/
       .header_content_up_search
         .header_content_up_search_bar
           %input.search 
@@ -13,9 +14,14 @@
         .header_content_lower_left_category
           = link_to 'カテゴリ', class: "category"
         .header_content_lower_left_brand
-          = link_to 'ブランド', class: "brand" 
-      .header_content_lower_right
-        .header_content_lower_right_login
-          = link_to 'ログイン', new_user_session_path, class: "log_in"
-        .header_content_lower_right_register
-          = link_to '新規登録', users_path, class: "sign_up"
+          = link_to 'ブランド', class: "brand"
+      - if user_signed_in?
+        .header_content_lower_right
+          .header_content_lower_right_login
+            = link_to "マイページ", user_path(current_user.id)
+      - else
+        .header_content_lower_right
+          .header_content_lower_right_login
+            = link_to 'ログイン', new_user_session_path, class: "log_in"
+          .header_content_lower_right_register
+            = link_to '新規登録', users_path, class: "sign_up"
