@@ -1,7 +1,6 @@
 class Category < ApplicationRecord
   has_many :items
   has_ancestry
-  # has_many :sizes
   
   def search
     if self.depth == 0
