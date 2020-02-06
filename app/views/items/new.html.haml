@@ -88,7 +88,6 @@
               ブランド
             %span.form-arbitrary
               任意
-          -# %input.sell_main_form_content_select{:autofocus => "autofocus", :name => "item[brand_id]", :placeholder => "例）ZARA", :type => "text"}/
           = f.collection_select :brand_id, @brand, :id, :name, {prompt: "---"}, {class: "sell_main_form_content_select", require: true}
           / /商品の状態、選択エリア↓↓↓
           .sell_main_form_content_form-label
