@@ -43,6 +43,6 @@ class User < ApplicationRecord
   validates :birth_month,       presence: true, format: { with: NUMBER_REGEX }
   validates :birth_day,         presence: true, format: { with: NUMBER_REGEX }
 
-  validates :phone_number,      presence: true, uniqueness: true, format: { with: VALID_PHONE_REGEX }
+  # validates :phone_number,      presence: true, uniqueness: true, format: { with: VALID_PHONE_REGEX }
   
 end
