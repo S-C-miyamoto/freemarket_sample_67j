@@ -8,28 +8,37 @@
       .show_main_1_right_main
         .show_main_1_right_main_item
           %h2.show_main_1_right_main_item_name
-            products3
+            = @item.name
           .show_main_1_right_main_item_body
             %ul.show_main_1_right_main_item_body_1
               %li.show_main_1_right_main_item_body_1_2
-                %img.show_main_1_right_main_item_body_1_2_3{src: "/a007.png"}
+              - @image = Image.where(item_id: params[:id])
+              - @image.each do |i|
+                %li=image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_3"
                 %ul.show_main_1_right_main_item_body_1_2_4
                   %li.show_main_1_right_main_item_body_1_2_4_1
-                    %img.show_main_1_right_main_item_body_1_2_4_1_image{src: "/a007.png"}
+                  - @image = Image.where(item_id: params[:id])
+                  - @image.each do |i|
+                    %li=image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_1_image"
                   %li.show_main_1_right_main_item_body_1_2_4_2
-                    %img.show_main_1_right_main_item_body_1_2_4_2_image{src: "/a004.png"}
+                  - @image = Image.where(item_id: params[:id])
+                  - @image.each do |i|
+                    %li=image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_2_image"
                   %li.show_main_1_right_main_item_body_1_2_4_3
-                    %img.show_main_1_right_main_item_body_1_2_4_3_image{src: "/a003.png"}
+                    %img.show_main_1_right_main_item_body_1_2_4_3_image
           .show_main_1_right_main_item_price
-            %span.show_main_1_right_main_item_price_1
-              ¥30000
+            %ul.show_main_1_right_main_item_price_0
+              %li.show_main_1_right_main_item_price_0_1
+                ¥
+              %li.show_main_1_right_main_item_price_0_2
+                = @item.price
             .show_main_1_right_main_item_price_detail
               %span.show_main_1_right_main_item_price_detail_1
                 (税込)
               %span.show_main_1_right_main_item_price_detail_2
                 送料込み
           .show_main_1_right_main_item_detail
-            products3
+            = @item.name
           .show_main_1_right_main_item_table
             %table.show_main_1_right_main_item_table_tbody
               %tbody.show_main_1_right_main_item_table_tbody_1
@@ -37,7 +46,7 @@
                   %th.show_main_1_right_main_item_table_tbody_1_1_1
                     出品者
                   %td.show_main_1_right_main_item_table_tbody_1_1_2
-                    hoge
+                    = @user.nickname
                 %tr.show_main_1_right_main_item_table_tbody_1_2
                   %th.show_main_1_right_main_item_table_tbody_1_2_1
                     カテゴリー
@@ -60,7 +69,7 @@
                   %th.show_main_1_right_main_item_table_tbody_1_5_1
                     商品の状態
                   %td.show_main_1_right_main_item_table_tbody_1_5_2
-                    未使用に近い
+                    = @item.condition
                 %tr.show_main_1_right_main_item_table_tbody_1_6
                   %th.show_main_1_right_main_item_table_tbody_1_6_1
                     配送料の一覧
@@ -76,6 +85,12 @@
                     発送日の目安
                   %td.show_main_1_right_main_item_table_tbody_1_8_2
                     4-7日で発送
+          .show_main_1_right_main_item_pde
+            .show_main_1_right_main_item_pde_1
+              - if @item.seller_id == current_user.id
+                = link_to '編集・削除する', class: "show_main_1_right_main_item_pde_1_2"
+              - else
+                = link_to '購入画面に進む', class: "show_main_1_right_main_item_pde_1_2"
           .show_main_1_right_main_item_area
             %ul.show_main_1_right_main_item_area_1
               %li.show_main_1_right_main_item_area_1_like{id: "like"}

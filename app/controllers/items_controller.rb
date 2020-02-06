@@ -2,6 +2,12 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def show
+    @item = Item.find(params[:id])
+    @image = Image.where(params[:id])
+    @user = User.find(params[:id])
+  end
+
   def new
     @item = Item.new
     3.times {@item.images.build}
