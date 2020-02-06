@@ -99,8 +99,9 @@
               電話番号の確認
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "/users/logout"}
-              ログアウト
+            = link_to "ログアウト", logout_user_path
+            -# %a{:href => "/users/logout"}
+            -#   ログアウト
               %i.fas.fa-chevron-right
     .mypage_main
       %section.mypage_main_user-icon

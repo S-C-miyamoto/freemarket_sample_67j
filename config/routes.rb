@@ -19,4 +19,9 @@ Rails.application.routes.draw do
     resources :images
   end
 
+  resources :users do
+    member do
+      get "logout"
+    end
+  end
 end
