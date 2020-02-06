@@ -160,6 +160,27 @@
     %h2.main_6_title
       ピックアップブランド
     .main_6_content
+    -#   .category-index__contents__root-lists__list
+    -#     %ul.category-index__contents__root-lists__list__parents
+    -#       - @categories.each_with_index do |category, i|
+    -#         %li.category-index__contents__root-lists__list__parents__parent
+    -#           = link_to category.name, categories_path(anchor: "parent-list#{i}"), class: "category-index__contents__root-lists__list__parents__parent__link"
+    -# .category-index__contents__category-lists
+    -#   %ul.category-index__contents__category-lists__parents
+    -#     - @categories.each_with_index do |category, s|
+    -#       %li.category-index__contents__category-lists__parents__parent
+    -#         .category-index__contents__category-lists__parents__parent__name{id: "parent-list#{s}"}
+    -#           = category.name
+    -#         %ul.category-index__contents__category-lists__children
+    -#           - category.children.each do |children|
+    -#             %li.category-index__contents__category-lists__children__child
+    -#               .category-index__contents__category-lists__children__child__name
+    -#                 = children.name
+    -#               %ul.category-index__contents__category-lists__grandchildren
+    -#                 - children.children.each do |grandchildren|
+    -#                   %li.category-index__contents__category-lists__grandchildren__grandchild
+    -#                     = link_to category_path(id: grandchildren.id), class: "category-index__contents__category-lists__grandchildren__grandchild__link" do
+    -#                       = grandchildren.name
       .main_6_content_title
         %h3.main_6_content_title_n
           アーカイバ
