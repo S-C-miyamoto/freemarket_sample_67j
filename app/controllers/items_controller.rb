@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
     @brand = Brand.order("id ASC")
     @size = Size.order("id ASC")
     4.times {@item.images.build}
+    @item.build_shipping
   end
 
   def create
@@ -18,6 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def item_parameter
-    params.require(:item).permit(:name, :state, :condition, :price, :category_id, :brand_id, :size_id, images_attributes: [:image])
+    params.require(:item).permit(:name, :state, :condition, :price, :category_id, :brand_id, :size_id, 
+                                  images_attributes: [:image], shipping_attributes: [:shipping_area, :shipping_days, :shipping_method, :fee_burden])
   end
 end

@@ -7,6 +7,9 @@ class Item < ApplicationRecord
   belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User", optional: true
   belongs_to :size
+  has_one :shipping, dependent: :destroy, validate: true
+  
+  accepts_nested_attributes_for :shipping
 
   validates :name, :state, :condition, presence: true
 end
