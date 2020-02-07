@@ -115,7 +115,7 @@
               .single_content
                 .submit_btn
                   %i.fas.fa-credit-card
-                    %a.creditbtn{:href => "/card/new"}
+                    = link_to credit_user_path, class: "creditbtn" do
                       クレジットカードを追加する
             .settings_not_regist
               %a.credittext{:href => "#"}
