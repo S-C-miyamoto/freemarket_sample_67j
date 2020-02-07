@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to :brand
   belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User", optional: true
+  belongs_to :size
 
   validates :name, :state, :condition, presence: true
 end
