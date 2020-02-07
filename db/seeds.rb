@@ -110,6 +110,37 @@ end
 
 
 
+[
+  ['XXS', 1],
+  ['XS', 1],
+  ['S', 1],
+  ['M', 1],
+  ['L', 1],
+  ['XL', 1],
+  ['2XL', 1],
+  ['3XL', 1],
+  ['4XL', 1],
+  ['FREESIZE', 1],
+  ['XXS', 2],
+  ['XS', 2],
+  ['S', 2],
+  ['M', 2],
+  ['L', 2],
+  ['XL', 2],
+  ['2XL', 2],
+  ['3XL', 2],
+  ['4XL', 2],
+  ['FREESIZE', 2],
+  ['60cm', 3],
+  ['70cm', 3],
+  ['80cm', 3],
+  ['90cm', 3],
+  ['95cm', 3]
+].each do |name, classification|
+  Size.create(
+    { name: name, classification: classification }
+  )
+end
 
 
 

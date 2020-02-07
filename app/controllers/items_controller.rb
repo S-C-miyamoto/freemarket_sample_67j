@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @category = Category.order("id ASC").limit(13)
     @brand = Brand.order("id ASC")
+    @size = Size.order("id ASC")
     4.times {@item.images.build}
   end
 
@@ -17,6 +18,6 @@ class ItemsController < ApplicationController
   end
 
   def item_parameter
-    params.require(:item).permit(:name, :state, :condition, :price, :category_id, :brand_id, images_attributes: [:image])
+    params.require(:item).permit(:name, :state, :condition, :price, :category_id, :brand_id, :size_id, images_attributes: [:image])
   end
 end

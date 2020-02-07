@@ -62,11 +62,8 @@
               サイズ
             %span.form-require
               必須
-          %select.sell_main_form_content_select{:autofocus => "autofocus", :name => "item[size]"}
-            %option{:value => ""} --
-            %option{:value => "S"} S
-            %option{:value => "M"} M
-            %option{:value => "L"} L
+            = f.collection_select :size_id, @size, :id, :name, {prompt: "---"}, {class: "sell_main_form_content_select", require: true}
+
           / /ブランド、入力エリア↓↓↓
           .sell_main_form_content_form-label
             %label.bolb
