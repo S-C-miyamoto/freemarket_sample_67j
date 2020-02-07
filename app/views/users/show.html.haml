@@ -23,7 +23,7 @@
               いいね！一覧
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "/items/sell"}
+            = link_to new_item_path do
               出品する
               %i.fas.fa-chevron-right
           %li
@@ -83,7 +83,7 @@
               発送元・お届先住所変更
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "/card/confirmation"}
+            = link_to payment_user_path do
               支払い方法
               %i.fas.fa-chevron-right
           %li
@@ -108,7 +108,7 @@
         %a{:href => "#"}
           %img{:src => "/assets/member_photo_noimage_thumb-224a733c50d48aba6d9fdaded809788bbeb5ea5f6d6b8368adaebb95e58bcf53.png"}/
           %h2.bolb
-            kazuho
+            = current_user.nickname
           .number
             %p
               評価

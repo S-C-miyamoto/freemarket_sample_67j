@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get "logout"
+      get "credit"
+      get "payment"
     end
   end
 end
