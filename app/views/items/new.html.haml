@@ -10,8 +10,7 @@
   .sell_main
     %h2.sell_main_title.bolb
       商品の情報を入力
-    = form_with model: @item, class: "sell_main_form" do |f|
-    
+    = form_with model: @item, class: "sell_main_form", local: true do |f|
       / /商品画像、投稿エリア↓↓↓
       .sell_main_form_upload
         %h3.sell_main_form_upload_head.bolb
@@ -25,9 +24,25 @@
           ドラッグアンドドロップ
           %br/
           またはクリックしてファイルをアップロード
-          .sell_main_form_upload_box
+        .sell_main_form_upload_box
+          #image-box
+            #previews
+              - if @item.persisted?
+                - @item.images.each_with_index do |image, i|
+                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
             = f.fields_for :images do |image|
-              = image.file_field :image, class: 'file_field'
+              .js-file_group{"data-index" => "#{image.index}"}
+                = image.file_field :image, class: 'js-file'
+                %br/
+                %span.js-remove 削除
+              - if @item.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+            - if @item.persisted?
+              .js-file_group{"data-index" => "#{@item.images.count}"}
+                = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+                .js-remove 削除
+            -# = f.fields_for :images do |image|
+            -#   = image.file_field :image, class: 'file_field'
 
       .sell_main_form_content
         / /商品名、入力エリア↓↓↓
