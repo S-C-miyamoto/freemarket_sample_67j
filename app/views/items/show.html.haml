@@ -1,4 +1,7 @@
 = render partial: "top"
+= @item.seller.nickname
+= @item.name
+= @item.price
 %nav.show_nav
   こんばんわ
 .show_main
@@ -11,21 +14,17 @@
             = @item.name
           .show_main_1_right_main_item_body
             %ul.show_main_1_right_main_item_body_1
+            /- @image = Image.where(params[item_id: :seller_id])
+            - @item.images.each do |i|
               %li.show_main_1_right_main_item_body_1_2
-              - @image = Image.where(item_id: params[:id])
-              - @image.each do |i|
-                %li=image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_3"
+                =image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_3"
                 %ul.show_main_1_right_main_item_body_1_2_4
-                  %li.show_main_1_right_main_item_body_1_2_4_1
-                  - @image = Image.where(item_id: params[:id])
-                  - @image.each do |i|
-                    %li=image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_1_image"
-                  %li.show_main_1_right_main_item_body_1_2_4_2
-                  - @image = Image.where(item_id: params[:id])
-                  - @image.each do |i|
-                    %li=image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_2_image"
-                  %li.show_main_1_right_main_item_body_1_2_4_3
-                    %img.show_main_1_right_main_item_body_1_2_4_3_image
+                  .show_main_1_right_main_item_body_1_2_4_1
+                    =image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_1_image"
+                  .show_main_1_right_main_item_body_1_2_4_2
+                    =image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_2_image"
+                  .show_main_1_right_main_item_body_1_2_4_3
+                    =image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_3_image"
           .show_main_1_right_main_item_price
             %ul.show_main_1_right_main_item_price_0
               %li.show_main_1_right_main_item_price_0_1
@@ -46,7 +45,7 @@
                   %th.show_main_1_right_main_item_table_tbody_1_1_1
                     出品者
                   %td.show_main_1_right_main_item_table_tbody_1_1_2
-                    = @user.nickname
+                    = @item.seller.nickname
                 %tr.show_main_1_right_main_item_table_tbody_1_2
                   %th.show_main_1_right_main_item_table_tbody_1_2_1
                     カテゴリー
@@ -88,7 +87,8 @@
           .show_main_1_right_main_item_pde
             .show_main_1_right_main_item_pde_1
               - if @item.seller_id == current_user.id
-                = link_to '編集・削除する', class: "show_main_1_right_main_item_pde_1_2"
+                = link_to edit_item_path(@item), class: "show_main_1_right_main_item_pde_1_2" do
+                  編集・削除する
               - else
                 = link_to '購入画面に進む', class: "show_main_1_right_main_item_pde_1_2"
           .show_main_1_right_main_item_area

@@ -10,7 +10,7 @@
   .sell_main
     %h2.sell_main_title.bolb
       商品の情報を入力
-    %form.sell_main_form{"accept-charset" => "UTF-8", :action => "/items", :enctype => "multipart/form-data", :method => "post"}
+    %form.sell_main_form{"accept-charset" => "UTF-8", :action => "/items/8", :enctype => "multipart/form-data", :method => "put"}
       %input{:name => "utf8", :type => "hidden", :value => "✓"}/
       %input{:name => "authenticity_token", :type => "hidden", :value => "ybKLrFRX8kxqLPEnfIqzpi68LvmZe1kvX/eh4KlCaCcv+Lv20jRzBuR9cvtjvHVvY1IEVO7uGtKnysvAQoHX3Q=="}/
       / /商品画像、投稿エリア↓↓↓
@@ -245,11 +245,19 @@
           %a{:href => "#"}> 加盟店規約
           に同意したことになります。
         .sell_main_form_content_box
-          %input{:name => "item[trade_state]", :type => "hidden", :value => "出品中"}/
-          %input.submit-btn__go{"data-disable-with" => "登録する", :name => "commit", :type => "submit", :value => "出品する"}/
-          %a.submit-btn__back{:href => "http://localhost:3000/users/identity"}
-            もどる
-
+          
+        
+        
+        
+        
+        
+        
+        
+         -# = link_to '編集完了', items_path(@item,@image), method: :update, class: "submit-btn__go"
+          -# = link_to '削除する', item_path(@item, @image), method: :delete, class: "submit-btn__back" 
+            
+          
+          
 
 
 

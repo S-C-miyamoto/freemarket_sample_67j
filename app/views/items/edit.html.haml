@@ -1,0 +1,66 @@
+.contents
+  = form_with model: @item, url: {action: :update}, local: true do |f|
+    .contents__main
+      .contents__main__header
+        商品情報を入力
+        .contents__main__upload
+          .contents__main__image
+            .contents__main__image__head
+              出品画像
+              最大10枚までアップロードできます
+          .contents__main__image__box
+            .contents__main__image__box
+              .contents__main__image__box__previews
+              .contents__main__image__box__uploader
+                .previews
+                -if @item.persisted?
+                  -@item.images.each_with_index do |image,i|
+                    = image_tag image.image.url, date: { index: i }, width: "100", height: '100'
+                = f.fields_for :images do |image|
+                  .js-file_group{"data-index" => "#{image.index}"}
+                    = image.file_field :image, class: 'js-file'
+                    %span.js-remove
+                      削除
+                  -if @item.persisted?
+                    = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                  -if @item.persisted?
+                    .js-file_group{"data-index" => "#{@item.images.count}"}
+                      = image.file_field :image, name: "item[images_attributes][#{@item.images.count}][image]", class: "js-file"
+                      .js-remove
+                        削除
+      .contents__main__name
+        .contents__main__name__name-content
+          .contents__main__name__name-content__item-name
+            商品名
+          = f.text_field :name, placeholder: "商品名 (必須40文字まで)", class: "contents__main__name__name-content__item-nameform", required: true
+        .contents__main__name__item-exp
+          商品の説明
+        = f.text_area :state, class:"contents__main__name__name-content__item-expform",required: true
+        .contents__main__detail__right__select
+          商品状態
+        = f.select :condition, [["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"],["目立った傷や汚れなし", "目立った傷や汚れなし"],["やや傷や汚れあり", "やや傷や汚れあり"],["傷や汚れあり", "傷や汚れあり"],["全体的に状態が悪い", "全体的に状態が悪い"]], {prompt: "---"}, class: "contents__main__detail__right__select__form", required: true
+    .contents__main__price.clearfix
+      .contents__main__price__right
+        .contents__main__price__right__box
+          .contents__main__price__right__box__price
+            価格
+            .contents__main__price__right__box__price--form
+              ¥
+              =f.number_field :price, id: "price__form", class: "contents__main__price__right__box__price--form-input", placeholder: "例） 300", required: true
+          .contents__main__price__right__box__fee.clearfix
+            .contents__main__price__right__box__fee__left
+              販売手数料(10%)
+            .contents__main__price__right__box__fee__right
+          .contents__main__price__right__box__profit.clearfix
+            .contents__main__price__right__box__profit__left
+              販売利益
+            .contents__main__price__right__box__profit__right
+    .contents__main__submit
+      .contents__main__submit--text
+        =f.submit value: "編集する", class: "contents__main__submit--button"
+      .contents__main__submit--return
+        = link_to item_path(@item), method: :delete, class: "contents__main__submit--return--button" do
+          削除する
+    - if current_user
+      = current_user.nickname
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
