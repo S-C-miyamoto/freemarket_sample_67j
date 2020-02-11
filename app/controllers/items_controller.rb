@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.order('id DESC').limit(3)
   end
 
   def new

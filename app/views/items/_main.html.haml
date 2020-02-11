@@ -99,65 +99,78 @@
   %section.main_5
     %h2.main_5_title
       ピックアップカテゴリー
-    .main_5_content
-      .main_5_content_title
-        %h3.main_5_content_title_n
-          新規投稿商品
-      -#     # カテゴリー一覧を作る
-      -#   .new_items__contents__grid
-      -# - result_items.each_with_index do |item, i|
-      -# .new_items__contents__grid
-      -# - result_items.each_with_index do |item, i|
-      -#   .new_items__contents__grid__item
-      -#     = link_to item_path(item) do
-      -#       = image_tag item.images.first.image.url, class: "new_items__contents__grid__item__image"
-      -#       .new_items__contents__grid__item__price
-      -#         ¥
-      -#         = item.price
-      -#       .new_items__contents__grid__item__name
-      -#         = item.name
-      -#         %br/
-      -#         = item.category.name
-      -#       - if item.level == 2
-      -#         .soldout
-      -#           .soldout__name
-      -#             sold
-      .main_5_content_list
-        = link_to item_path(id = 1), class: "main_5_content_list_left" do
-          %img.main_5_content_list_left_image{src: "/a007.png", width: "250", height: "250"}
-          %p.main_5_content_list_left_top
-            product3
-          .main_5_content_list_left_middle
-            .middle_1
-              30000円
-            .middle_2
-              ★0
-          %p.main_5_content_list_left_lower
-            (税込)
-        .main_5_content_list_middle
-          %img.main_5_content_list_middle_image{src: "/a004.png", width: "250", height: "250"}
-          %p.main_5_content_list_middle_top
-            product3
-          .main_5_content_list_middle_middle
-            .middle_3
-              30000円
-            .middle_4
-              ★0
-          %p.main_5_content_list_middle_lower
-            (税込)
-        .main_5_content_list_right
-          %img.main_5_content_list_right_image{src: "/a001.png", width: "250", height: "250"}
-          %p.main_5_content_list_right_top
-            product3
-          .main_5_content_list_right_middle
-            .middle_5
-              30000円
-            .middle_6
-              ★0
-          %p.main_5_content_list_right_lower
-            (税込)
-  %section.main_6
-    %h2.main_6_title
+    .main_5_content_title
+      %h3.main_5_content_title_n
+        新規投稿商品
+    .items_wrapper
+      - @items.each do |item|
+        = link_to item_path(item) do
+          .item_box
+            .item_box_image 
+              - img = item.images[0]
+              = image_tag img.image.url, class: "item_box_content"
+            .item_box_body
+            - if item.buyer_id = 2
+              .item_box_body_name
+                = item.name
+                .item_box_body_price
+                  = item.price
+                  円 
+                  .item_box_body_tax
+                    (税込)
+                  %else 
+                    .item_box_body_tax
+                      sold out
+                    
+
+
+-#  if($('@items').attr('id') == 'sample') {
+-#         // #sampleがあるときの処理
+-#         alert('#sampleあり');
+-#     } else {
+-#         // #sampleがないときの処理
+-#         alert('#sampleなし');
+-#     }
+
+
+          
+  
+
+  -#     .main_5_content_list
+  -#       = link_to item_path(id = 1), class: "main_5_content_list_left" do
+  -#         %img.main_5_content_list_left_image{src: "/a007.png", width: "250", height: "250"}
+  -#           product3
+  -#         .main_5_content_list_left_middle
+  -#           .middle_1
+  -#             30000円
+  -#           .middle_2
+  -#             ★0
+  -#         %p.main_5_content_list_left_lower
+  -#           (税込)
+  -#       .main_5_content_list_middle
+  -#         %img.main_5_content_list_middle_image{src: "/a004.png", width: "250", height: "250"}
+  -#         %p.main_5_content_list_middle_top
+  -#           product3
+  -#         .main_5_content_list_middle_middle
+  -#           .middle_3
+  -#             30000円
+  -#           .middle_4
+  -#             ★0
+  -#         %p.main_5_content_list_middle_lower
+  -#           (税込)
+  -#       .main_5_content_list_right
+  -#         %img.main_5_content_list_right_image{src: "/a001.png", width: "250", height: "250"}
+  -#         %p.main_5_content_list_right_top
+  -#           product3
+  -#         .main_5_content_list_right_middle
+  -#           .middle_5
+  -#             30000円
+  -#           .middle_6
+  -#             ★0
+  -#         %p.main_5_content_list_right_lower
+  -#           (税込)
+  -# %section.main_6
+  -#   %h2.main_6_title
       ピックアップブランド
     .main_6_content
     -#   .category-index__contents__root-lists__list
