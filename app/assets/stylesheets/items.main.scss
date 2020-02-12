@@ -330,15 +330,13 @@
   }
   &_6{
     width: 100%;
-    height: 500px;
-    padding-top: 75px;
+    height: 450px;
     background-color: rgb(226, 222, 222);
     &_title{
-      width: 50%;
-      height: 70px;
-      margin: 0 auto;
-      font-size: 35px;
       text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
     }
     &_content{
       width: 100%;
