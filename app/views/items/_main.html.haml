@@ -99,7 +99,6 @@
   %section.main_5
     %h2.main_5_title
       ピックアップカテゴリー
-
     .main_5_content_title
       %h3.main_5_content_title_n
         新規投稿商品
@@ -121,6 +120,33 @@
                     ★0
                 .item_box_body_tax
                   (税込）
+                  
+  %section.main_6
+    %h2.main_6_title
+      ピックアップブランド
+    .main_6_content_title
+      %h3.main_6_content_title_n
+        アーカイバ
+    .items_wrapper2
+      - @items.each do |item|
+        = link_to item_path(item) do
+          .item_box2
+            .item_box2_image 
+              - img = item.images[0]
+              = image_tag img.image.url, class: "item_box2_content2"
+            .item_box2_body
+              .item_box2_body_name
+                = item.name
+                .item_box2_body_likeprice
+                  .item_box2_body_price
+                    = item.price
+                    円 
+                  .item_box2_body_like
+                    ★0
+                .item_box2_body_tax
+                  (税込）
+
+
   %section.main_7
     .main_7_content
       .main_7_content_top
