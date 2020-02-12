@@ -99,125 +99,28 @@
   %section.main_5
     %h2.main_5_title
       ピックアップカテゴリー
-    .main_5_content
-      .main_5_content_title
-        %h3.main_5_content_title_n
-          新規投稿商品
-      -#     # カテゴリー一覧を作る
-      -#   .new_items__contents__grid
-      -# - result_items.each_with_index do |item, i|
-      -# .new_items__contents__grid
-      -# - result_items.each_with_index do |item, i|
-      -#   .new_items__contents__grid__item
-      -#     = link_to item_path(item) do
-      -#       = image_tag item.images.first.image.url, class: "new_items__contents__grid__item__image"
-      -#       .new_items__contents__grid__item__price
-      -#         ¥
-      -#         = item.price
-      -#       .new_items__contents__grid__item__name
-      -#         = item.name
-      -#         %br/
-      -#         = item.category.name
-      -#       - if item.level == 2
-      -#         .soldout
-      -#           .soldout__name
-      -#             sold
-      .main_5_content_list
-        = link_to item_path(id = 8), class: "main_5_content_list_left" do
-          %img.main_5_content_list_left_image{src: "/a007.png", width: "250", height: "250"}
-          %p.main_5_content_list_left_top
-            product3
-          .main_5_content_list_left_middle
-            .middle_1
-              30000円
-            .middle_2
-              ★0
-          %p.main_5_content_list_left_lower
-            (税込)
-        .main_5_content_list_middle
-          %img.main_5_content_list_middle_image{src: "/a004.png", width: "250", height: "250"}
-          %p.main_5_content_list_middle_top
-            product3
-          .main_5_content_list_middle_middle
-            .middle_3
-              30000円
-            .middle_4
-              ★0
-          %p.main_5_content_list_middle_lower
-            (税込)
-        .main_5_content_list_right
-          %img.main_5_content_list_right_image{src: "/a001.png", width: "250", height: "250"}
-          %p.main_5_content_list_right_top
-            product3
-          .main_5_content_list_right_middle
-            .middle_5
-              30000円
-            .middle_6
-              ★0
-          %p.main_5_content_list_right_lower
-            (税込)
-  %section.main_6
-    %h2.main_6_title
-      ピックアップブランド
-    .main_6_content
-    -#   .category-index__contents__root-lists__list
-    -#     %ul.category-index__contents__root-lists__list__parents
-    -#       - @categories.each_with_index do |category, i|
-    -#         %li.category-index__contents__root-lists__list__parents__parent
-    -#           = link_to category.name, categories_path(anchor: "parent-list#{i}"), class: "category-index__contents__root-lists__list__parents__parent__link"
-    -# .category-index__contents__category-lists
-    -#   %ul.category-index__contents__category-lists__parents
-    -#     - @categories.each_with_index do |category, s|
-    -#       %li.category-index__contents__category-lists__parents__parent
-    -#         .category-index__contents__category-lists__parents__parent__name{id: "parent-list#{s}"}
-    -#           = category.name
-    -#         %ul.category-index__contents__category-lists__children
-    -#           - category.children.each do |children|
-    -#             %li.category-index__contents__category-lists__children__child
-    -#               .category-index__contents__category-lists__children__child__name
-    -#                 = children.name
-    -#               %ul.category-index__contents__category-lists__grandchildren
-    -#                 - children.children.each do |grandchildren|
-    -#                   %li.category-index__contents__category-lists__grandchildren__grandchild
-    -#                     = link_to category_path(id: grandchildren.id), class: "category-index__contents__category-lists__grandchildren__grandchild__link" do
-    -#                       = grandchildren.name
-      .main_6_content_title
-        %h3.main_6_content_title_n
-          アーカイバ
-      .main_6_content_list
-        .main_6_content_list_left
-          %img.main_6_content_list_left_image{src: "/a007.png", width: "250", height: "250"}
-          %p.main_6_content_list_left_top
-            product3
-          .main_6_content_list_left_middle
-            .middle_7
-              30000円
-            .middle_8
-              ★0
-          %p.main_6_content_list_left_lower
-            (税込)
-        .main_6_content_list_middle
-          %img.main_6_content_list_middle_image{src: "/a004.png", width: "250", height: "250"}
-          %p.main_6_content_list_middle_top
-            product3
-          .main_6_content_list_middle_middle
-            .middle_9
-              30000円
-            .middle_10
-              ★0
-          %p.main_6_content_list_middle_lower
-            (税込)
-        .main_6_content_list_right
-          %img.main_6_content_list_right_image{src: "/a001.png", width: "250", height: "250"}
-          %p.main_6_content_list_right_top
-            product3
-          .main_6_content_list_right_middle
-            .middle_11
-              30000円
-            .middle_12
-              ★0
-          %p.main_6_content_list_right_lower
-            (税込)
+
+    .main_5_content_title
+      %h3.main_5_content_title_n
+        新規投稿商品
+    .items_wrapper
+      - @items.each do |item|
+        = link_to item_path(item) do
+          .item_box
+            .item_box_image 
+              - img = item.images[0]
+              = image_tag img.image.url, class: "item_box_content"
+            .item_box_body
+              .item_box_body_name
+                = item.name
+                .item_box_body_likeprice
+                  .item_box_body_price
+                    = item.price
+                    円 
+                  .item_box_body_like
+                    ★0
+                .item_box_body_tax
+                  (税込）
   %section.main_7
     .main_7_content
       .main_7_content_top
