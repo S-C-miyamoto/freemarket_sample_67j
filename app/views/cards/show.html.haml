@@ -1,12 +1,13 @@
 = render partial: "items/top"
 
+
 .mypage_contents
   .mypage_wrapper
     .mypage_side-bar
       %nav.mypage_nav
         %ul.mypage_nav_list
           %li
-            = link_to "users/mypage" do
+            = link_to "/users/mypage" do
               マイページ
               %i.fas.fa-chevron-right
           %li
@@ -22,7 +23,7 @@
               いいね！一覧
               %i.fas.fa-chevron-right
           %li
-            = link_to "/items/sell" do
+            = link_to new_item_path do
               出品する
               %i.fas.fa-chevron-right
           %li
@@ -82,7 +83,7 @@
               発送元・お届先住所変更
               %i.fas.fa-chevron-right
           %li
-            = link_to "/card/confirmation" do
+            = link_to payment_user_path do
               支払い方法
               %i.fas.fa-chevron-right
           %li
@@ -98,9 +99,11 @@
               電話番号の確認
               %i.fas.fa-chevron-right
           %li
-            = link_to "/users/logout" do
-              ログアウト
-              %i.fas.fa-chevron-right
+            = link_to "ログアウト", logout_user_path
+            %i.fas.fa-chevron-right
+
+
+
 
     .payment_main_content.clearfix
       .payment_main_content_right
@@ -113,14 +116,32 @@
               %ul.settings_payment_list
             %section.settings_add_card
               .single_content
-                .submit_btn
-                  %i.fas.fa-credit-card
-                    = link_to credit_user_path, class: "creditbtn" do
-                      クレジットカードを追加する
+                -if @default_card_information.brand == "Visa"
+                  = image_tag "/images/material/logo/visa.svg", height: 15, width: 49
+                
+                -elsif @default_card_information.brand == "MasterCard"
+                  = image_tag "/images/material/logo/master-card.svg", height: 15, width: 49
+
+                -elsif @default_card_information.brand == "JCB"
+                  = image_tag "/images/material/logo/jcb.svg", height: 15, width: 49
+
+                -elsif @default_card_information.brand == "American Express"
+                  = image_tag "/images/material/logo/american_express.svg", height: 15, width: 49
+
+                -elsif @default_card_information.brand == "Diners Club"
+                  = image_tag "/images/material/logo/dinersclub.svg", height: 15, width: 49
+
+                -elsif @default_card_information.brand == "Discover"
+                  = image_tag "/images/material/logo/discover.svg", height: 15, width: 49
+                .single__inner__list__num
+                  = "**** **** **** " + @default_card_information.last4
+                .single__inner__list__num
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
+                  = link_to card_path(@card.id), class: "single__inner__list__remove", method: :delete do
+                    削除する
             .settings_not_regist
               = link_to root_path, class: "credittext" do
                 支払い方法について&gt;
-
-
-
 = render partial: "items/fooder"
