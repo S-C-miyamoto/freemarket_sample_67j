@@ -1,9 +1,7 @@
+- image = @item.images.first
 = render partial: "top"
-= @item.seller.nickname
-= @item.name
-= @item.price
 %nav.show_nav
-  こんばんわ
+  = link_to 'カテゴリ', '#'
 .show_main
   .show_main_1
     .show_main_1_left
@@ -13,18 +11,13 @@
           %h2.show_main_1_right_main_item_name
             = @item.name
           .show_main_1_right_main_item_body
-            %ul.show_main_1_right_main_item_body_1
-            /- @image = Image.where(params[item_id: :seller_id])
-            - @item.images.each do |i|
-              %li.show_main_1_right_main_item_body_1_2
-                =image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_3"
-                %ul.show_main_1_right_main_item_body_1_2_4
-                  .show_main_1_right_main_item_body_1_2_4_1
-                    =image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_1_image"
-                  .show_main_1_right_main_item_body_1_2_4_2
-                    =image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_2_image"
-                  .show_main_1_right_main_item_body_1_2_4_3
-                    =image_tag i.image.url, class: "show_main_1_right_main_item_body_1_2_4_3_image"
+            %ul
+              %li
+                = image_tag image.image.url,class:"main-image"
+                %ul
+                  - @item.images.each do |image|
+                    %li
+                      = image_tag image.image.url,class:"image-list"
           .show_main_1_right_main_item_price
             %ul.show_main_1_right_main_item_price_0
               %li.show_main_1_right_main_item_price_0_1
@@ -39,58 +32,54 @@
           .show_main_1_right_main_item_detail
             = @item.name
           .show_main_1_right_main_item_table
-            %table.show_main_1_right_main_item_table_tbody
-              %tbody.show_main_1_right_main_item_table_tbody_1
-                %tr.show_main_1_right_main_item_table_tbody_1_1
-                  %th.show_main_1_right_main_item_table_tbody_1_1_1
-                    出品者
-                  %td.show_main_1_right_main_item_table_tbody_1_1_2
+            %table
+              %tbody
+                %tr
+                  %th 出品者
+                  %td
                     = @item.seller.nickname
-                %tr.show_main_1_right_main_item_table_tbody_1_2
-                  %th.show_main_1_right_main_item_table_tbody_1_2_1
-                    カテゴリー
-                  %td.show_main_1_right_main_item_table_tbody_1_2_2
-                    %a.show_main_1_right_main_item_table_tbody_1_2_2_1
-                      ベビー・キッズ
-                    %a.show_main_1_right_main_item_table_tbody_1_2_2_2
-                      ベビー服(男女兼用) ~95cm
-                    %a.show_main_1_right_main_item_table_tbody_1_2_2_3
-                      アウター
-                %tr.show_main_1_right_main_item_table_tbody_1_3
-                  %th.show_main_1_right_main_item_table_tbody_1_3_1
-                    ブランド
-                  %td.show_main_1_right_main_item_table_tbody_1_3_2
-                %tr.show_main_1_right_main_item_table_tbody_1_4
-                  %th.show_main_1_right_main_item_table_tbody_1_4_1
-                    商品のサイズ
-                  %td.show_main_1_right_main_item_table_tbody_1_4_2
-                %tr.show_main_1_right_main_item_table_tbody_1_5
-                  %th.show_main_1_right_main_item_table_tbody_1_5_1
-                    商品の状態
-                  %td.show_main_1_right_main_item_table_tbody_1_5_2
+                %tr
+                  %th カテゴリー
+                  %td
+                    = @item.category.name
+              - if @item.brand.present?
+                %tr
+                  %th ブランド
+                  %td
+                    = @item.brand.name
+              - if @item.size.present?
+                %tr
+                  %th 商品のサイズ
+                  %td
+                    = @item.size.name
+                %tr
+                  %th 商品の状態
+                  %td 
                     = @item.condition
-                %tr.show_main_1_right_main_item_table_tbody_1_6
-                  %th.show_main_1_right_main_item_table_tbody_1_6_1
-                    配送料の一覧
-                  %td.show_main_1_right_main_item_table_tbody_1_6_2
-                    送料込み(出品者負担)
-                %tr.show_main_1_right_main_item_table_tbody_1_7
-                  %th.show_main_1_right_main_item_table_tbody_1_7_1
-                    発送元の地域
-                  %td.show_main_1_right_main_item_table_tbody_1_7_2
-                    岩手県
-                %tr.show_main_1_right_main_item_table_tbody_1_8
-                  %th.show_main_1_right_main_item_table_tbody_1_8_1
-                    発送日の目安
-                  %td.show_main_1_right_main_item_table_tbody_1_8_2
-                    4-7日で発送
+                %tr
+                  %th 配送料の負担
+                  %td 
+                    = @item.shipping.fee_burden
+                %tr
+                  %th 発送元の地域
+                  %td
+                    = @item.shipping.shipping_area
+                %tr
+                  %th 発送日の目安
+                  %td
+                    = @item.shipping.shipping_days
           .show_main_1_right_main_item_pde
             .show_main_1_right_main_item_pde_1
-              - if @item.seller_id == current_user.id
-                = link_to edit_item_path(@item), class: "show_main_1_right_main_item_pde_1_2" do
-                  編集・削除する
+              - if user_signed_in?
+                - if @item.seller.id == current_user.id
+                  = link_to edit_item_path(@item), class: "show_main_1_right_main_item_pde_1_2" do
+                    編集
+                  = link_to item_path(@item), method: :delete, class: "show_main_1_right_main_item_pde_1_2" do
+                    削除
+                - else
+                  = link_to '購入画面に進む', '#', class: "show_main_1_right_main_item_pde_1_4"
               - else
-                = link_to '購入画面に進む', class: "show_main_1_right_main_item_pde_1_2"
+                = link_to '戻る', root_path, class: "show_main_1_right_main_item_pde_1_4"
           .show_main_1_right_main_item_area
             %ul.show_main_1_right_main_item_area_1
               %li.show_main_1_right_main_item_area_1_like{id: "like"}
