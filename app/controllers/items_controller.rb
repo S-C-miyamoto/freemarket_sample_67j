@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.where(buyer_id: nil).order("created_at DESC").limit(3)
+    @items2 = Item.where(brand_id: 1).order("created_at DESC").limit(3)
   end
 
   def new
