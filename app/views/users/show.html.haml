@@ -7,19 +7,19 @@
       %nav.mypage_nav
         %ul.mypage_nav_list
           %li
-            %a{:href => "/users/mypage"}
+            = link_to "users/mypage" do
               マイページ
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               お知らせ
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               やることリスト
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               いいね！一覧
               %i.fas.fa-chevron-right
           %li
@@ -27,59 +27,59 @@
               出品する
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               出品した商品-出品中
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               出品した商品-取引中
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               出品した商品-売却済み
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               購入した商品-取引中
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               購入した商品-過去の取引
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               ニュース一覧
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               評価一覧
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               ガイド
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               お問い合わせ
               %i.fas.fa-chevron-right
         %h3.mypage_nav_title.bolb メルペイ
         %ul.mypage_nav_list
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               売上・振込申請
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               ポイント
               %i.fas.fa-chevron-right
         %h3.mypage_nav_title.bolb 設定
         %ul.mypage_nav_list
           %li
-            %a{:href => "/users/profile"}
+            = link_to "/users/profile" do
               プロフィール
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               発送元・お届先住所変更
               %i.fas.fa-chevron-right
           %li
@@ -87,15 +87,15 @@
               支払い方法
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               メール/パスワード
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "/users/identity"}
+            = link_to "/users/identity" do
               本人情報
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               電話番号の確認
               %i.fas.fa-chevron-right
           %li
@@ -105,8 +105,8 @@
               %i.fas.fa-chevron-right
     .mypage_main
       %section.mypage_main_user-icon
-        %a{:href => "#"}
-          %img{:src => "/assets/member_photo_noimage_thumb-224a733c50d48aba6d9fdaded809788bbeb5ea5f6d6b8368adaebb95e58bcf53.png"}/
+        = link_to root_path do
+          = image_tag "/assets/member_photo_noimage_thumb-224a733c50d48aba6d9fdaded809788bbeb5ea5f6d6b8368adaebb95e58bcf53.png"
           %h2.bolb
             = current_user.nickname
           .number
@@ -143,8 +143,5 @@
               取引中の商品がありません
           .mypage_main_container_content.completion
             .mypage_main_container_content_none.bolb
-              過去に取引した商品がありません
-
-
-
+              過去に取引した商品がありません 
 = render partial: "items/fooder"

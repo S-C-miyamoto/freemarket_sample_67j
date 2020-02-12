@@ -1,0 +1,122 @@
+.sign-up_header
+  = image_tag "/images/material/logo/J_Team_Logo.png", height: 100, width: 200 , class: 'sign-up_header_image'
+  .sign-up_header_logo
+    = image_tag "/images/material/logo/logo.png", height: 100, width: 200 
+
+.item-buy-contents
+  .item-buy-contents__main
+    .item-buy-contents__main__header
+      購入内容の確認
+
+    .item-buy-contents__main__purchase-goods
+      .item-buy-contents__main__purchase-goods__box
+        .item-buy-contents__main__purchase-goods__left
+          = image_tag @image.image.url, class: "item-buy-contents__main__purchase-goods__left--image"
+
+
+        .item-buy-contents__main__purchase-goods__right
+          .item-buy-contents__main__purchase-goods__right--item-name
+            = @item.name
+
+          .item-buy-contents__main__purchase-goods__right--item-price
+            %br
+            %span
+              ¥ 
+              = @item.price  
+              %br
+            %span（税込）送料込み
+
+    .item-buy-contents__main__buy-item
+      .item-buy-contents__main__buy-item__box
+        .item-buy-contents__main__buy-item__box__price
+          .item-buy-contents__main__buy-item__box__price--text
+            支払い金額
+          .item-buy-contents__main__buy-item__box__price--price
+            ¥ 
+            = @item.price
+        .item-buy-contents__main__buy-item__box__price--point
+          %input.item-buy-contents__main__buy-item__box__price--point--check{name: "item-point", placeholder: "", type: "checkbox", value: ""}/
+          ポイントを使用 (所持ポイント: P 0)
+
+        .item-buy-contents__main__buy-item__box__pay-method
+          .item-buy-contents__main__buy-item__box__pay-method--text
+            .item-buy-contents__main__buy-item__box__pay-method--text--left
+              支払い方法
+              %br
+              .item-buy-contents__main__buy-item__box__pay-method--text--right
+                = link_to root_path, class:"item-buy-contents__main__buy-item__box__pay-method--link" do
+                  登録してください
+
+          .item-buy-contents__main__buy-item__box__pay-method__method
+            %p 
+            %p= "**** **** **** " + @default_card_information.last4
+            %p
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+
+          .item-buy-contents__main__buy-item__box__pay-method__logo
+            -if @default_card_information.brand == "Visa"
+              = image_tag "/images/material/logo/visa.svg", height: 15, width: 49, class: "item-buy-contents__main__buy-item__box__pay-method__logo--image"
+            
+            -elsif @default_card_information.brand == "MasterCard"
+              = image_tag "/images/material/logo/master-card.svg", height: 15, width: 49, class: "item-buy-contents__main__buy-item__box__pay-method__logo--image"
+
+            -elsif @default_card_information.brand == "JCB"
+              = image_tag "/images/material/logo/jcb.svg", height: 15, width: 49, class: "item-buy-contents__main__buy-item__box__pay-method__logo--image"
+
+            -elsif @default_card_information.brand == "American Express"
+              = image_tag "/images/material/logo/american_express.svg", height: 15, width: 49, class: "item-buy-contents__main__buy-item__box__pay-method__logo--image"
+
+            -elsif @default_card_information.brand == "Diners Club"
+              = image_tag "/images/material/logo/dinersclub.svg", height: 15, width: 49, class: "item-buy-contents__main__buy-item__box__pay-method__logo--image"
+
+            -elsif @default_card_information.brand == "Discover"
+              = image_tag "/images/material/logo/discover.svg", height: 15, width: 49, class: "item-buy-contents__main__buy-item__box__pay-method__logo--image"
+
+            
+
+        .item-buy-contents__main__buy-item__box__area
+          .item-buy-contents__main__buy-item__box__area--text
+            .item-buy-contents__main__buy-item__box__area--text--left
+              配送先
+              %br
+                = link_to root_path, class:"item-buy-contents__main__buy-item__box__area--text--right" do
+                  .icon-plus-circle
+                    登録してください
+
+          .item-buy-contents__main__buy-item__box__area--address
+            %p= @address.zipcode
+            %p
+              = @address.prefecture
+              = @address.city
+              = @address.detail_address
+            %p
+              = @user.last_name
+              = @user.first_name
+
+        .item-buy-contents__main__buy-item__box__submit
+          = form_tag(action: "pay", method: "POST") do
+            %button.item-buy-contents__main__buy-item__box__submit--button 
+              購入する
+
+
+
+
+.sign-up_footer
+  .sign-up_footer_contents
+    .sign-up_footer_contents_links
+      %ul
+        = link_to root_path, class:"sign-up_footer_contents_links_1" do
+          %li プライバシーポリシー
+      %ul
+        = link_to root_path, class:"sign-up_footer_contents_links_2" do
+          %li Fmarket利用規約
+      %ul
+        = link_to root_path, class:"sign-up_footer_contents_links_3" do
+          %li 特定商取引に関する表記
+    .sign-up_footer_contents_logo
+      = link_to root_path, class:"sign-up_footer_contents_logo_link" do
+        = image_tag "/images/material/logo/logo_gray.svg", height: 20, width: 32, class: 'sign-up_footer_contents_logo_image'
+    .sign-up_footer_contents_inc
+      ©︎Fmarket,inc.
