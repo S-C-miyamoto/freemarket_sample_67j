@@ -4,8 +4,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    #@items = Item.where(seller_id: @item.seller_id).includes(:images)
-    #@image = Image.where(params[])
+    @seller = User.find(@item.seller_id)
     #@item = User.find(params[:id]).saling_items
     #@items = Item.where(seller_id: @item.seller_id)
     #@image = Image.where(params[:item_id]).includes(:images)

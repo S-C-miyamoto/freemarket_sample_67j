@@ -59,8 +59,6 @@
       .contents__main__submit--text
         =f.submit value: "編集する", class: "contents__main__submit--button"
       .contents__main__submit--return
-        = link_to item_path(@item), method: :delete, class: "contents__main__submit--return--button" do
-          削除する
     - if current_user
       = current_user.nickname
       = link_to "ログアウト", destroy_user_session_path, method: :delete
