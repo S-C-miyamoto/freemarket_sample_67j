@@ -255,11 +255,10 @@
     padding-top: 75px;
     background-color: rgb(226, 222, 222);
     &_title{
-      width: 50%;
-      height: 70px;
-      margin: 0 auto;
-      font-size: 35px;
       text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
     }
     &_content{
       width: 100%;
@@ -272,7 +271,7 @@
           margin: 0 auto;
           text-align: center;
           color: #3CCACE;
-          font-size: 25px;
+          font-size: 24px;
         }
       }
       &_list{

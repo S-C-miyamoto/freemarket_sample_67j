@@ -1,15 +1,15 @@
 $(document).on('turbolinks:load', ()=> {
-  // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
-                    name="product[images_attributes][${num}][src]"
-                    id="product_images_attributes_${num}_src"><br>
-                    <div class="js-remove">削除</div>
+                    name="item[images_attributes][${num}][image]"
+                    id="product_images_attributes_${num}_image"><br>
+                    <div class="js-remove">
+                      削除
+                    </div>
                   </div>`;
     return html;
   }
-  // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
     const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
     return html;
@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', ()=> {
 
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      img.setAttribute('src', blobUrl);
+      img.setAttribute('image', blobUrl);
     } else {  // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
