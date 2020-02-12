@@ -7,99 +7,99 @@
       %nav.mypage_nav
         %ul.mypage_nav_list
           %li
-            %a{:href => "/users/mypage"}
+            = link_to "/users/mypage" do
               マイページ
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               お知らせ
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               やることリスト
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               いいね！一覧
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "/items/sell"}
+            = link_to "/items/sell" do
               出品する
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               出品した商品-出品中
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               出品した商品-取引中
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               出品した商品-売却済み
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               購入した商品-取引中
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               購入した商品-過去の取引
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               ニュース一覧
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               評価一覧
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               ガイド
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               お問い合わせ
               %i.fas.fa-chevron-right
         %h3.mypage_nav_title.bolb メルペイ
         %ul.mypage_nav_list
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               売上・振込申請
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               ポイント
               %i.fas.fa-chevron-right
         %h3.mypage_nav_title.bolb 設定
         %ul.mypage_nav_list
           %li
-            %a{:href => "/users/profile"}
+            = link_to "/users/profile" do
               プロフィール
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               発送元・お届先住所変更
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "/card/confirmation"}
+            = link_to "/card/confirmation" do
               支払い方法
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               メール/パスワード
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "/users/identity"}
+            = link_to "/users/identity" do
               本人情報
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "#"}
+            = link_to root_path do
               電話番号の確認
               %i.fas.fa-chevron-right
           %li
-            %a{:href => "/users/logout"}
+            = link_to "/users/logout" do
               ログアウト
               %i.fas.fa-chevron-right
 
@@ -114,13 +114,13 @@
           %span.form-necessary
             必須
           = f.text_field :card_number, type: 'text', class: 'input-text-field', placeholder: '半角数字のみ', maxlength: "16"
-          %img{:height => "20", :src => "/images/material/logo/visa.svg", :width => "49"}/
-          %img{:height => "20", :src => "/images/material/logo/master-card.svg", :width => "34"}/
-          %img{:height => "20", :src => "/images/material/logo/saison-card.svg", :width => "30"}/
-          %img{:height => "20", :src => "/images/material/logo/jcb.svg", :width => "32"}/
-          %img{:height => "20", :src => "/images/material/logo/american_express.svg", :width => "21"}/
-          %img{:height => "20", :src => "/images/material/logo/dinersclub.svg", :width => "32"}/
-          %img{:height => "20", :src => "/images/material/logo/discover.svg", :width => "32"}/
+          = image_tag "/images/material/logo/visa.svg", height: 20, width: 32
+          = image_tag "/images/material/logo/master-card.svg", height: 20, width: 32
+          = image_tag "/images/material/logo/saison-card.svg", height: 20, width: 32
+          = image_tag "/images/material/logo/jcb.svg", height: 20, width: 32
+          = image_tag "/images/material/logo/american_express.svg", height: 20, width: 32
+          = image_tag "/images/material/logo/dinersclub.svg", height: 20, width: 32
+          = image_tag "/images/material/logo/discover.svg", height: 20, width: 32
         .card-form_content
           = f.label :有効期限, class: 'bolb'
           %span.form-necessary
@@ -154,16 +154,16 @@
   .sign-up_footer_contents
     .sign-up_footer_contents_links
       %ul
-        %a.sign-up_footer_contents_links_1{:href => ""}
+        = link_to root_path, class:"sign-up_footer_contents_links_1" do
           %li プライバシーポリシー
       %ul
-        %a.sign-up_footer_contents_links_2{:href => "/"}
+        = link_to root_path, class:"sign-up_footer_contents_links_2" do
           %li Fmarket利用規約
       %ul
-        %a.sign-up_footer_contents_links_3{:href => "/"}
+        = link_to root_path, class:"sign-up_footer_contents_links_3" do
           %li 特定商取引に関する表記
     .sign-up_footer_contents_logo
-      %a.sign-up_footer_contents_logo_link{:href => "/"}
-        %img.sign-up_footer_contents_logo_image{:src => "/images/material/logo/logo_gray.svg"}/
+      = link_to root_path, class:"sign-up_footer_contents_logo_link" do
+        = image_tag "/images/material/logo/logo_gray.svg", height: 20, width: 32, class: 'sign-up_footer_contents_logo_image'
     .sign-up_footer_contents_inc
       ©︎Fmarket,inc.
