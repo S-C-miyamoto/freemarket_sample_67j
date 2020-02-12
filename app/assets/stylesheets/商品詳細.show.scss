@@ -1,3 +1,4 @@
+
 .show_nav{
   width: 100%;
   border-top: 1px solid #eee;
@@ -25,8 +26,8 @@
           &_body{
             margin: 16px 0 0;
             &_1{
-              display: flex;
               position: relative;
+              text-align: center;
               &_2{
                 display: flex;
                 flex-direction: column;
@@ -74,11 +75,21 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            &_1{
-              font-size: 46px;
-              font-weight: bold;
-              margin: 0 10px 0 0;
+            &_0{
+              display: flex;
+              margin: 0 auto;
+              &_1{
+                font-size: 46px;
+                font-weight: bold;
+                margin: 0 10px 0 0;
+              }
+              &_2{
+                font-size: 46px;
+                font-weight: bold;
+                margin: 0 10px 0 0;
+              }
             }
+            
             &_detail{
               font-size: 16px;
             }
@@ -271,6 +282,23 @@
                     font-size: 14px;
                   }
                 }
+              }
+            }
+          }
+          &_pde{
+            width: 100%;
+            background-color: #3CCACE;
+            &_1{
+              width: 50%;
+              height: 70px;
+              margin: 0 auto;
+              padding-top: 10px;
+              text-align-last: center;
+              a{
+                width: 200px;
+                margin: 0 auto;
+                font-size: 30px;
+                color: aliceblue;
               }
             }
           }

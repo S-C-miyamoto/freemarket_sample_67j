@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_02_07_082013) do
     t.text "state"
     t.string "condition", null: false
     t.integer "price", null: false
-    t.integer "size_id"
     t.integer "category_id"
     t.integer "brand_id"
     t.integer "buyer_id"
