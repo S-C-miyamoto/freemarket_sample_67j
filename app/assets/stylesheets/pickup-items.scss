@@ -1,0 +1,45 @@
+.items_wrapper{
+  width: 780px;
+  margin: 26px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.item_box{
+  width: 220px;
+  height: 245px;
+  display: inline-block;
+  &_content{
+    width: 220px;
+    height: 150px;
+  }
+  &_image{
+    width: 220px;
+    height: 150px;
+  }
+  &_body{
+    background-color: white;
+    color: #333;
+    padding: 16px;
+    &_name{
+      overflow: hidden;
+      line-height: 1.5;
+      font-size: 16px;
+      text-align: left;
+    }
+    &_likeprice{
+      display: flex;
+      justify-content: space-between;
+    }
+    &_price{
+      font-size: 16px;
+      }
+    &_like{
+      font-size: 16px;
+    }
+    &_tax{
+      font-size: 10px;
+      text-align: left;
+    }
+  }
+}
