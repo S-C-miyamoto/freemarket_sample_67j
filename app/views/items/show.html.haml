@@ -70,13 +70,23 @@
                     = @item.shipping.shipping_days
           .show_main_1_right_main_item_pde
             .show_main_1_right_main_item_pde_1
-              - if @item.seller_id == current_user.id
-                = link_to edit_item_path(@item), class: "show_main_1_right_main_item_pde_1_2" do
-                  編集
-                = link_to item_path(@item), method: :delete, class: "show_main_1_right_main_item_pde_1_3" do
-                  削除
+              - if user_signed_in?
+                - if @item.seller.id == current_user.id
+                  = link_to edit_item_path(@item), class: "show_main_1_right_main_item_pde_1_2" do
+                    編集
+                  = link_to item_path(@item), method: :delete, class: "show_main_1_right_main_item_pde_1_2" do
+                    削除
+                - else
+                  = link_to '購入画面に進む', '#', class: "show_main_1_right_main_item_pde_1_4"
               - else
-                = link_to '購入画面に進む', class: "show_main_1_right_main_item_pde_1_2"
+                = link_to '戻る', root_path, class: "show_main_1_right_main_item_pde_1_4"
+          
+              -# = link_to '購入画面に進む', '#', class: "show_main_1_right_main_item_pde_1_4"
+              -# - elseif @item.seller_id != current_user.id
+              -#   = link_to '購入画面に進む', '#', class: "show_main_1_right_main_item_pde_1_4"
+              -# - else 
+              -#   = link_to '戻る', root_path, class: "show_main_1_right_main_item_pde_1_5"
+                  
           .show_main_1_right_main_item_area
             %ul.show_main_1_right_main_item_area_1
               %li.show_main_1_right_main_item_area_1_like{id: "like"}

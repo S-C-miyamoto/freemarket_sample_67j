@@ -128,15 +128,21 @@
               justify-content: space-between;
               &_2{
                 width: 150px;
-                font-size: 30px;
+                font-size: 18px;
                 color: aliceblue;
                 background-color: #3CCACE;
+                line-height: 55px;
+                border-radius: 100px;
               }
-              &_3{
-                width: 150px;
-                font-size: 30px;
-                color: aliceblue;
-                background-color: #3CCACE;
+              &_4{
+                line-height: 48px;
+                background: #3CCACE;
+                border: 1px solid #3CCACE;
+                color: #fff;
+                width: 60%;
+                font-size: 18px;
+                border-radius: 100px;
+                margin: auto;
               }
             }
           }
