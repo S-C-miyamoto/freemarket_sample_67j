@@ -6,10 +6,9 @@ class User < ApplicationRecord
           :trackable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   has_one :address, dependent: :destroy
   has_one :phone_number, dependent: :destroy
-  has_one :creditcard, dependent: :destroy
+  has_one :card, dependent: :destroy
   accepts_nested_attributes_for :address
   accepts_nested_attributes_for :phone_number
-  accepts_nested_attributes_for :creditcard
   has_many :sns_credentials
   has_many :comments
 

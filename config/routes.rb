@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :cards, only: [:new, :create, :show, :destroy] 
+
+  
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: 'users/registrations',
@@ -19,11 +22,20 @@ Rails.application.routes.draw do
     resources :images
   end
 
+  resources :purchase do
+    collection do
+      get 'buy'
+      get 'done'
+      post 'pay'
+    end
+  end
+
   resources :users do
     member do
       get "logout"
       get "credit"
       get "payment"
+      get 'purchase'
     end
   end
 end

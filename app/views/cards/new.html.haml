@@ -1,0 +1,68 @@
+.sign-up_header
+  %img.sign-up_header_image{:height => "100", :src => "/images/material/logo/J_Team_Logo.png", :width => "200"}/
+  .sign-up_header_logo
+    %img{:height => "100", :src => "/images/material/logo/logo.png", :width => "200"}/
+
+.card-new-contents
+  .card-new-main
+    %h2.chapter-head.bolb
+      クレジットカード情報入力
+    .card-form
+    = form_with model: @card, url: cards_path, method: :post, id: 'charge-form', class: 'card-form', novalidate: 'novalidate', local: true do |f|
+      .card-form_content
+        = f.label :カード番号, class: 'bolb'
+        %span.form-necessary
+          必須
+        = f.text_field :card_number, type: 'text', class: 'input-text-field', placeholder: '半角数字のみ', maxlength: "16"
+        %img{:height => "20", :src => "/images/material/logo/visa.svg", :width => "49"}/
+        %img{:height => "20", :src => "/images/material/logo/master-card.svg", :width => "34"}/
+        %img{:height => "20", :src => "/images/material/logo/saison-card.svg", :width => "30"}/
+        %img{:height => "20", :src => "/images/material/logo/jcb.svg", :width => "32"}/
+        %img{:height => "20", :src => "/images/material/logo/american_express.svg", :width => "21"}/
+        %img{:height => "20", :src => "/images/material/logo/dinersclub.svg", :width => "32"}/
+        %img{:height => "20", :src => "/images/material/logo/discover.svg", :width => "32"}/
+      .card-form_content
+        = f.label :有効期限, class: 'bolb'
+        %span.form-necessary
+          必須
+        .card-form_content_division
+          .select-wrap
+            %i.fas.fa-chevron-down.select-wrap_icon2
+            = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'select-credit'
+            %span
+              月
+          .select-wrap
+            %i.fas.fa-chevron-down.select-wrap_icon2
+            = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'select-credit'
+            %span
+              年
+      .card-form_content
+        = f.label :セキュリティコード, class: 'bolb'
+        %span.form-necessary
+          必須
+        = f.text_field :cvc, type: 'text', class: 'input-text-field', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
+        #card_token
+      .card-form_content
+        = f.submit '追加する', class: 'submit-btn', id: 'token_submit'
+        %p.text-right
+          %a{:href => "/"}
+            %i.fas.fa-question-circle
+            カード裏面の番号とは？
+
+.sign-up_footer
+  .sign-up_footer_contents
+    .sign-up_footer_contents_links
+      %ul
+        %a.sign-up_footer_contents_links_1{:href => ""}
+          %li プライバシーポリシー
+      %ul
+        %a.sign-up_footer_contents_links_2{:href => "/"}
+          %li Fmarket利用規約
+      %ul
+        %a.sign-up_footer_contents_links_3{:href => "/"}
+          %li 特定商取引に関する表記
+    .sign-up_footer_contents_logo
+      %a.sign-up_footer_contents_logo_link{:href => "/"}
+        %img.sign-up_footer_contents_logo_image{:src => "/images/material/logo/logo_gray.svg"}/
+    .sign-up_footer_contents_inc
+      ©︎Fmarket,inc.

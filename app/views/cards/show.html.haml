@@ -100,48 +100,48 @@
               %i.fas.fa-chevron-right
           %li
             = link_to "ログアウト", logout_user_path
-            -# %a{:href => "/users/logout"}
-            -#   ログアウト
-              %i.fas.fa-chevron-right
-    .mypage_main
-      %section.mypage_main_user-icon
-        %a{:href => "#"}
-          %img{:src => "/assets/member_photo_noimage_thumb-224a733c50d48aba6d9fdaded809788bbeb5ea5f6d6b8368adaebb95e58bcf53.png"}/
-          %h2.bolb
-            = current_user.nickname
-          .number
-            %p
-              評価
-              %span.bolb 0
-            %p
-              出品数
-              %span.bolb 0
-      %section.mypage_main_container
-        .tabs
-          %input#info{:checked => "checked", :name => "tab-radio", :type => "radio"}/
-          %label.tab-content{:for => "info"} お知らせ
-          %input#todo{:name => "tab-radio", :type => "radio"}/
-          %label.tab-content{:for => "todo"} やることリスト
-          .clear-shadow
-          .mypage_main_container_content.info
-            .mypage_main_container_content_none.bolb
-              現在、お知らせはありません
-          .mypage_main_container_content.todo
-            .mypage_main_container_content_none.bolb
-              現在、やることリストはありません
-      %section.mypage_main_container
-        %h2.mypage_main_container_title.bolb
-          購入した商品
-        .tabs
-          %input#trade{:checked => "checked", :name => "tab-check", :type => "radio"}/
-          %label.tab-content{:for => "trade"} 取引中
-          %input#completion{:name => "tab-check", :type => "radio"}/
-          %label.tab-content{:for => "completion"} 過去の取引
-          .clear-shadow
-          .mypage_main_container_content.trade
-            .mypage_main_container_content_none.bolb
-              取引中の商品がありません
-          .mypage_main_container_content.completion
-            .mypage_main_container_content_none.bolb
-              過去に取引した商品がありません 
+            %i.fas.fa-chevron-right
+
+
+
+
+    .payment_main_content.clearfix
+      .payment_main_content_right
+        %section.payment_main_content_right_all
+          %h2.payment_main_content_right_head 支払い方法
+          .payment_main_content_right_head_inner
+            %section
+              .payment_main_content_center
+                %h3.payment_main_content_sub_head クレジットカード一覧
+              %ul.settings_payment_list
+            %section.settings_add_card
+              .single_content
+                -if @default_card_information.brand == "Visa"
+                  = image_tag "/images/material/logo/visa.svg", height: 15, width: 49
+                
+                -elsif @default_card_information.brand == "MasterCard"
+                  = image_tag "/images/material/logo/master-card.svg", height: 15, width: 49
+
+                -elsif @default_card_information.brand == "JCB"
+                  = image_tag "/images/material/logo/jcb.svg", height: 15, width: 49
+
+                -elsif @default_card_information.brand == "American Express"
+                  = image_tag "/images/material/logo/american_express.svg", height: 15, width: 49
+
+                -elsif @default_card_information.brand == "Diners Club"
+                  = image_tag "/images/material/logo/dinersclub.svg", height: 15, width: 49
+
+                -elsif @default_card_information.brand == "Discover"
+                  = image_tag "/images/material/logo/discover.svg", height: 15, width: 49
+                .single__inner__list__num
+                  = "**** **** **** " + @default_card_information.last4
+                .single__inner__list__num
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
+                  = link_to card_path(@card.id), class: "single__inner__list__remove", method: :delete do
+                    削除する
+            .settings_not_regist
+              %a.credittext{:href => "#"}
+                支払い方法について&gt;
 = render partial: "items/fooder"

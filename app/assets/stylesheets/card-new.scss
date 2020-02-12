@@ -1,0 +1,88 @@
+.card-new-contents{
+  background-color: rgb(245, 245, 245);
+}
+
+.card-new-main{
+  width: calc(100% - 300px);
+  margin-left: 150px;
+
+  .text-right{
+    text-align: right;
+  }
+  .select-credit{
+    height: 45px;
+    width: 150px;
+    margin: 8px 0 0;
+    padding: 0 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 15px;
+    -webkit-appearance: none;
+  }
+  .select-wrap{
+    position: relative;
+    &_icon2{
+      display: inline-block;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      color: #888;
+    }
+  }
+  .input-text-field{
+    height: 45px;
+    width: 100%;
+    margin: 8px 0 0;
+    padding: 10px 15px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+  .form-necessary{
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    background-color: #ea352d;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .card-form{
+    padding: 32px 40px 40px;
+    font-size: 14px;
+    background-color: #fff;
+    a{
+      color: #069ce7
+    }
+    &_content{
+      width: 340px;
+      margin: 0 auto;
+      padding: 0 0 30px;
+      .submit-btn{
+        margin: 32px 0;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        transition: all ease-out .3s;
+        text-align: center;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+      }
+      &_division{
+        width: 340px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  .chapter-head{
+    background-color: #fff;
+    font-size: 24px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+  }
+}
