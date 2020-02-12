@@ -12,7 +12,10 @@
 @import 'users/mypage';
 @import 'users/sell';
 @import 'users/payment';
-@import 'users/creditcard';
+@import 'users/card';
 @import 'users/logout';
 @import '商品詳細.show';
-@import 'pickup-items'
+@import 'purchase.scss';
+@import 'card-new.scss';
+@import 'card-show.scss';
+
