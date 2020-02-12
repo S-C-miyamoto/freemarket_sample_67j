@@ -34,7 +34,7 @@ class CardsController < ApplicationController
       customer.delete
       @card.delete
     end
-      redirect_to action: "new"
+    redirect_to action: "new"
   end
 
 
