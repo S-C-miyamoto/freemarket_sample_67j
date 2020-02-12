@@ -10,17 +10,14 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def buy
-    Payjp.api_key = 'sk_test_ebc9ef2512e4cf855b0dc53f'
     @image = Image.find(16)
-    # @image = Image.find(params[:item_id])
-    @address = Address.find_by(user_id: current_user.id)
-    @user = User.find_by(id: current_user.id)
+    @address = Address.find_by(params[:id])
+    @user = User.find_by(params[:id])
     customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 
   def pay
-    Payjp.api_key = 'sk_test_ebc9ef2512e4cf855b0dc53f'
     @card = Card.find_by(user_id: current_user.id)
     if @item.blank?
       redirect_to action: "buy"
@@ -53,31 +50,11 @@ class PurchaseController < ApplicationController
   end
 
   def set_item
-    # @item = Item.find(params[:item_id])
     @item = Item.find(16)
 
   end
 
   def get_payjp_info
-      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
   end
-
-  def redirect_to_sign_in
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
-  end
-
-  def redirect_to_item_show_if_own_item
-    if @item.seller_id == current_user.id
-      # redirect_to item_path(params[:item_id])
-    end
-  end
-
-  def redirect_to_item_show_if_item_sold
-    # if @item.level != 0
-      # redirect_to item_path(params[:item_id])
-    # end
-  end
-
 end

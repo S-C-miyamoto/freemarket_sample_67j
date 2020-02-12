@@ -142,6 +142,6 @@
                   = link_to card_path(@card.id), class: "single__inner__list__remove", method: :delete do
                     削除する
             .settings_not_regist
-              %a.credittext{:href => "#"}
+              = link_to root_path, class: "credittext" do
                 支払い方法について&gt;
 = render partial: "items/fooder"
