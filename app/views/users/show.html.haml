@@ -83,8 +83,10 @@
               発送元・お届先住所変更
               %i.fas.fa-chevron-right
           %li
-            = link_to payment_user_path do
-              支払い方法
+            - if @card.blank?
+              = link_to "支払い方法", card_path
+            - else
+              = link_to "支払い方法", payment_user_path 
               %i.fas.fa-chevron-right
           %li
             = link_to root_path do
