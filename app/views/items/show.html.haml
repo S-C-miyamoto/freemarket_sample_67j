@@ -77,7 +77,7 @@
                   = link_to item_path(@item), method: :delete, class: "show_main_1_right_main_item_pde_1_2" do
                     削除
                 - else
-                  = link_to buy_purchase_index_path, class: "show_main_1_right_main_item_pde_1_4" do
+                  = link_to buy_item_purchase_index_path(@item.id), class: "show_main_1_right_main_item_pde_1_4" do
                     購入画面に進む
               - else
                 = link_to '戻る', root_path, class: "show_main_1_right_main_item_pde_1_4"
@@ -116,8 +116,9 @@
               後の商品
             %i{class: "fa fa-angle-right"}
       .show_main_1_right_main_related
-        %a.show_main_1_right_main_related_item
-          ベビー・キッズををもっと見る
+        = link_to '#', class: "show_main_1_right_main_related_item" do
+          = @item.category.name
+          をもっと見る
         .show_main_1_right_main_related_product
 %aside.show_aside
   .show_aside_content

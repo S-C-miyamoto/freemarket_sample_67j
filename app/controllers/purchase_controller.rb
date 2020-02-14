@@ -8,15 +8,12 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def buy
-    @image = Image.find(params[:id])
-    @address = Address.find(params[:id])
-    @user = User.find(params[:id])
     customer = Payjp::Customer.retrieve(@card.customer_id)
-      @default_card_information = customer.cards.retrieve(@card.card_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 
   def pay
-    @card = Card.find(user_id: current_user.id)
+    # @card = Card.find(user_id: current_user.id)
     if @item.blank?
       redirect_to action: "buy"
     else
@@ -48,7 +45,7 @@ class PurchaseController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:item_id])
   end
 
   def get_payjp_info
