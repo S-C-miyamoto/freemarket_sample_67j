@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :cards, only: [:new, :create, :show, :destroy] 
+   
 
   
   devise_for :users, controllers: {
@@ -19,16 +19,18 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items do
+    resources :cards, only: [:new, :create, :show, :destroy]
     resources :images
-  end
-
-  resources :purchase do
-    collection do
-      get 'buy'
-      get 'done'
-      post 'pay'
+    resources :purchase do
+      collection do
+        get 'buy'
+        get 'done'
+        post 'pay'
+      end
     end
   end
+
+  
 
   resources :users do
     member do

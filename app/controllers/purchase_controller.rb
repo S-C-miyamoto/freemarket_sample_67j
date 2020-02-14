@@ -1,6 +1,6 @@
 class PurchaseController < ApplicationController
   
-  before_action :redirect_to_sign_in, only: [:pay, :buy]
+  # before_action :redirect_to_sign_in, only: [:pay, :buy]
   before_action :set_item, only: [:pay, :buy, :done, :transaction_comp]
   before_action :get_payjp_info, only: [:pay, :buy]
 
@@ -9,15 +9,15 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def buy
-    @image = Image.find(16)
-    @address = Address.find(params[:id])
-    @user = User.find(params[:id])
+    # @image = Image.find(params[:id])
+    # @address = Address.find(params[:id])
+    # @user = User.find(params[:id])
     customer = Payjp::Customer.retrieve(@card.customer_id)
-      @default_card_information = customer.cards.retrieve(@card.card_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 
   def pay
-    @card = Card.find(user_id: current_user.id)
+    # @card = Card.find(user_id: current_user.id)
     if @item.blank?
       redirect_to action: "buy"
     else
@@ -49,7 +49,7 @@ class PurchaseController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(16)
+    @item = Item.find(params[:item_id])
 
   end
 

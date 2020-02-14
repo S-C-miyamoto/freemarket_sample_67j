@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :buy]
 
   def index
     @items = Item.where(buyer_id: nil).order("created_at DESC").limit(3)
@@ -44,6 +44,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
+  end
+
+  def buy
   end
 
   private

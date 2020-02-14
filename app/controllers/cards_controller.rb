@@ -1,12 +1,12 @@
 class CardsController < ApplicationController
 
-  before_action :set_card, only: [:show, :destroy, :new]
+  before_action :set_card, only:[:show, :destroy]
   before_action :get_payjp_info, only:[:show, :destroy, :create]
   
   require "payjp"
 
   def new
-    redirect_to action: "new" if @card.exists?
+    # redirect_to action: "new" if @card.blank?
   end
 
   

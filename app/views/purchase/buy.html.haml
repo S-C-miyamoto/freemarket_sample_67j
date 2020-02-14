@@ -1,3 +1,4 @@
+- image = @item.images.first
 .sign-up_header
   = image_tag "/images/material/logo/J_Team_Logo.png", height: 100, width: 200 , class: 'sign-up_header_image'
   .sign-up_header_logo
@@ -11,7 +12,7 @@
     .item-buy-contents__main__purchase-goods
       .item-buy-contents__main__purchase-goods__box
         .item-buy-contents__main__purchase-goods__left
-          = image_tag @image.image.url, class: "item-buy-contents__main__purchase-goods__left--image"
+          = image_tag image.image.url, class: "item-buy-contents__main__purchase-goods__left--image"
 
 
         .item-buy-contents__main__purchase-goods__right
@@ -24,7 +25,7 @@
               ¥ 
               = @item.price  
               %br
-            %span（税込）送料込み
+            %span= @item.shipping.fee_burden
 
     .item-buy-contents__main__buy-item
       .item-buy-contents__main__buy-item__box
@@ -84,16 +85,22 @@
                 = link_to root_path, class:"item-buy-contents__main__buy-item__box__area--text--right" do
                   .icon-plus-circle
                     登録してください
-
-          .item-buy-contents__main__buy-item__box__area--address
-            %p= @address.zipcode
-            %p
-              = @address.prefecture
-              = @address.city
-              = @address.detail_address
-            %p
-              = @user.last_name
-              = @user.first_name
+                〒 
+                = current_user.address.zipcode
+                %br
+                  = current_user.address.prefecture
+                  = current_user.address.city
+                  = current_user.address.detail_address
+                  = current_user.address.building
+          -# .item-buy-contents__main__buy-item__box__area--address
+          -#   %p= @address.zipcode
+          -#   %p
+          -#     = @address.prefecture
+          -#     = @address.city
+          -#     = @address.detail_address
+          -#   %p
+          -#     = @user.last_name
+          -#     = @user.first_name
 
         .item-buy-contents__main__buy-item__box__submit
           = form_tag(action: "pay", method: "POST") do
