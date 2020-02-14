@@ -28,12 +28,10 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    if @card.blank?
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
-    end
-    redirect_to action: "new"
+      redirect_to root_path
   end
 
 

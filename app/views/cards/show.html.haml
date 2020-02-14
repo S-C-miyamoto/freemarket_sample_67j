@@ -140,7 +140,7 @@
                   - exp_month = @default_card_information.exp_month.to_s
                   - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
                   = exp_month + " / " + exp_year
-                  = link_to card_path(@card.id), class: "single__inner__list__remove", method: :delete do
+                  = link_to item_card_path(@card), class: "single__inner__list__remove", method: :delete do
                     削除する
             .settings_not_regist
               = link_to root_path, class: "credittext" do

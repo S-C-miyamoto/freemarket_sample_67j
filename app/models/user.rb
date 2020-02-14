@@ -5,12 +5,8 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable,
           :trackable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   has_one :address, dependent: :destroy
-  has_one :phone_number, dependent: :destroy
   has_one :card, dependent: :destroy
   accepts_nested_attributes_for :address
-  accepts_nested_attributes_for :phone_number
-  has_many :sns_credentials
-  has_many :comments
   has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
   has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"
   has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "Item"
@@ -44,6 +40,5 @@ class User < ApplicationRecord
   validates :birth_month,       presence: true, format: { with: NUMBER_REGEX }
   validates :birth_day,         presence: true, format: { with: NUMBER_REGEX }
 
-  # validates :phone_number,      presence: true, uniqueness: true, format: { with: VALID_PHONE_REGEX }
   
 end
