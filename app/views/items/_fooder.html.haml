@@ -43,9 +43,9 @@
     %img.fooder_icon_1{src: "/images/material/logo/logo-white.png", width: "125", height: "40"}
   %p.fooder_c
     ©️FURIMA
-.camera
-
-  .camera_1
-    出品する
-  = link_to new_item_path do
-    %img.camera_icon{src: "/images/material/icon/icon_camera.png", width: "54", height: "54"}
+- if current_user
+  .camera
+    .camera_1
+      出品する
+    = link_to new_item_path do
+      %img.camera_icon{src: "/images/material/icon/icon_camera.png", width: "54", height: "54"}
