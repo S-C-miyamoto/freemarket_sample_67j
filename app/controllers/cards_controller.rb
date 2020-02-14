@@ -6,7 +6,6 @@ class CardsController < ApplicationController
   require "payjp"
 
   def new
-    # redirect_to action: "new" if @card.blank?
   end
 
   
