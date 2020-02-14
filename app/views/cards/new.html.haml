@@ -8,7 +8,7 @@
     %h2.chapter-head.bolb
       クレジットカード情報入力
     .card-form
-    = form_with model: @card, url: item_cards_path, method: :post, id: 'charge-form', class: 'card-form', novalidate: 'novalidate', local: true do |f|
+    = form_with model: @card, url: new_card_path, method: :post, id: 'charge-form', class: 'card-form', novalidate: 'novalidate', local: true do |f|
       .card-form_content
         = f.label :カード番号, class: 'bolb'
         %span.form-necessary
