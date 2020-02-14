@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function () {
+$(function () {
   // ユーザーの誕生日の閏年を動的に変化させる
   // 誕生日の配列を宣言
   var birth_year = [];
