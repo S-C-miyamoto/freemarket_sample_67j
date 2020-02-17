@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
 
   belongs_to :category
-  belongs_to :brand
+  belongs_to :brand, optional: true
   belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User", optional: true
   belongs_to :size

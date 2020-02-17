@@ -17,9 +17,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create_address
     @address = Address.new(address_params)
     @user.build_address(@address.attributes)
-    @user.save
-    sign_in(:user, @user)
-    redirect_to signup_path
+    binding
+    if @user.save
+      sign_in(:user, @user)
+      redirect_to signup_path
+    else
+      render :new_address
+    end
   end
 
   def session_and_valid_for_new_address
@@ -47,6 +51,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       birth_month: session[:birth_month],
       birth_day: session[:birth_day]
     )
+    unless @user.valid?
+      flash.now[:alert] = @user.errors.full_messages
+      render :new and return
+    end
   end
 
   def session_and_valid_for_create_address
@@ -65,7 +73,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     )
   end
 
-   protected
+  protected
 
   def address_params
   params.require(:address).permit(:zipcode, :prefecture, :city, :detail_address, :buidling, :optional_phone_number)

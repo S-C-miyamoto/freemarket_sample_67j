@@ -34,7 +34,7 @@
 
 .member-info_contents
   = form_with model: @user, url: addresses_path, method: :get, id: "new_user", class: 'member-info_contents_new_user', local: true do |f|
-    = render "devise/shared/error_messages", resource: @user
+    -# = render "devise/shared/error_messages", resource: @user
     .member-info_contents_top
       会員情報入力
     .member-info_contents_main
